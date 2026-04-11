@@ -1,0 +1,185 @@
+#!/usr/bin/env python3
+
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import json
+import ssl
+import urllib.request
+from pathlib import Path
+
+
+def compact_number(value: int) -> str:
+    if value >= 1_000_000:
+        return f"{value / 1_000_000:.1f}M".rstrip("0").rstrip(".")
+    if value >= 1_000:
+        return f"{value / 1_000:.1f}K".rstrip("0").rstrip(".")
+    return str(value)
+
+
+def fetch_json(url: str, token: str | None) -> object:
+    request = urllib.request.Request(
+        url,
+        headers={
+            "Accept": "application/vnd.github+json",
+            **({"Authorization": f"Bearer {token}"} if token else {}),
+        },
+    )
+    context = ssl.create_default_context()
+    with urllib.request.urlopen(request, context=context, timeout=20) as response:
+        return json.load(response)
+
+
+def fetch_metrics(username: str, token: str | None) -> dict[str, int]:
+    user = fetch_json(f"https://api.github.com/users/{username}", token)
+    repos = fetch_json(f"https://api.github.com/users/{username}/repos?per_page=100", token)
+    if not isinstance(user, dict) or not isinstance(repos, list):
+        raise ValueError("Unexpected GitHub API response")
+
+    return {
+        "followers": int(user.get("followers", 0)),
+        "public_repos": int(user.get("public_repos", 0)),
+        "total_stars": sum(int(repo.get("stargazers_count", 0)) for repo in repos if isinstance(repo, dict)),
+    }
+
+
+def build_svg(*, followers: int, total_stars: int, public_repos: int, updated_label: str) -> str:
+    followers_text = compact_number(followers)
+    stars_text = compact_number(total_stars)
+    repos_text = compact_number(public_repos)
+
+    return f"""<svg width="1280" height="420" viewBox="0 0 1280 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="56" y1="24" x2="1188" y2="394" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#08131F"/>
+      <stop offset="0.52" stop-color="#0D2131"/>
+      <stop offset="1" stop-color="#123A50"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="236" y1="88" x2="592" y2="318" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#39D98A"/>
+      <stop offset="1" stop-color="#32B1FF"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="900" y1="96" x2="1162" y2="296" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#32B1FF" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#39D98A" stop-opacity="0.24"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="12" y="12" width="1256" height="396" rx="28" fill="url(#bg)"/>
+  <rect x="12" y="12" width="1256" height="396" rx="28" stroke="#24465F" stroke-width="2"/>
+
+  <g opacity="0.18">
+    <path d="M76 52H1204" stroke="#6E8EA4"/>
+    <path d="M76 100H1204" stroke="#6E8EA4"/>
+    <path d="M76 148H1204" stroke="#6E8EA4"/>
+    <path d="M76 196H1204" stroke="#6E8EA4"/>
+    <path d="M76 244H1204" stroke="#6E8EA4"/>
+    <path d="M76 292H1204" stroke="#6E8EA4"/>
+    <path d="M76 340H1204" stroke="#6E8EA4"/>
+    <path d="M76 388H1204" stroke="#6E8EA4"/>
+    <path d="M140 36V396" stroke="#6E8EA4"/>
+    <path d="M236 36V396" stroke="#6E8EA4"/>
+    <path d="M332 36V396" stroke="#6E8EA4"/>
+    <path d="M428 36V396" stroke="#6E8EA4"/>
+    <path d="M524 36V396" stroke="#6E8EA4"/>
+    <path d="M620 36V396" stroke="#6E8EA4"/>
+    <path d="M716 36V396" stroke="#6E8EA4"/>
+    <path d="M812 36V396" stroke="#6E8EA4"/>
+    <path d="M908 36V396" stroke="#6E8EA4"/>
+    <path d="M1004 36V396" stroke="#6E8EA4"/>
+    <path d="M1100 36V396" stroke="#6E8EA4"/>
+  </g>
+
+  <g opacity="0.9">
+    <rect x="78" y="78" width="146" height="36" rx="18" fill="#102637"/>
+    <circle cx="94" cy="96" r="5" fill="#39D98A"/>
+    <text x="108" y="102" fill="#D7E3EB" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600">Kotlin</text>
+
+    <rect x="236" y="78" width="156" height="36" rx="18" fill="#102637"/>
+    <circle cx="252" cy="96" r="5" fill="#32B1FF"/>
+    <text x="266" y="102" fill="#D7E3EB" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600">Android</text>
+  </g>
+
+  <text x="78" y="164" fill="#F7FBFE" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700">Meet Miyani</text>
+  <text x="78" y="214" fill="#D0DEE8" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="500">Senior Android Developer</text>
+  <text x="78" y="258" fill="#AFC1CF" font-family="Segoe UI, Arial, sans-serif" font-size="20">
+    <tspan x="78" dy="0">Architecture modernization, scalable Android systems,</tspan>
+    <tspan x="78" dy="29">KSP code generation, and production mobile delivery.</tspan>
+    <tspan x="78" dy="29">Open source, shipped apps, and public technical writing.</tspan>
+  </text>
+
+  <g opacity="0.95">
+    <rect x="78" y="325" width="148" height="42" rx="15" fill="#0D1F2E" stroke="#1D3A50"/>
+    <text x="152" y="351" fill="#E6EFF5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">5+ years</text>
+
+    <rect x="238" y="325" width="196" height="42" rx="15" fill="#0D1F2E" stroke="#1D3A50"/>
+    <text x="336" y="351" fill="#E6EFF5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">500K+ downloads</text>
+
+    <rect x="446" y="325" width="190" height="42" rx="15" fill="#0D1F2E" stroke="#1D3A50"/>
+    <text x="541" y="351" fill="#E6EFF5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">3 production apps</text>
+  </g>
+
+  <g opacity="0.88">
+    <path d="M868 140C914 114 958 132 995 120C1041 104 1081 68 1148 82" stroke="url(#glow)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M855 314C897 292 940 314 986 298C1038 280 1078 240 1138 210" stroke="url(#glow)" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <g opacity="0.97">
+    <rect x="824" y="88" width="352" height="88" rx="24" fill="#102536" stroke="#1D3A50"/>
+    <text x="852" y="122" fill="#F0F6FA" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">Live GitHub signals</text>
+    <text x="852" y="149" fill="#AFC1CF" font-family="Segoe UI, Arial, sans-serif" font-size="16">Followers, public repo stars, and repository count.</text>
+    <text x="852" y="169" fill="#7FA0B5" font-family="Segoe UI, Arial, sans-serif" font-size="13">Updated {updated_label}</text>
+
+    <rect x="770" y="204" width="130" height="108" rx="24" fill="#102536" stroke="#1D3A50"/>
+    <text x="835" y="248" fill="#F7FBFE" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">{followers_text}</text>
+    <text x="835" y="277" fill="#AFC1CF" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16">Followers</text>
+
+    <rect x="919" y="204" width="130" height="108" rx="24" fill="#102536" stroke="#1D3A50"/>
+    <text x="984" y="248" fill="#F7FBFE" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">{stars_text}</text>
+    <text x="984" y="277" fill="#AFC1CF" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16">Stars</text>
+
+    <rect x="1068" y="204" width="130" height="108" rx="24" fill="#102536" stroke="#1D3A50"/>
+    <text x="1133" y="248" fill="#F7FBFE" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">{repos_text}</text>
+    <text x="1133" y="277" fill="#AFC1CF" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16">Public repos</text>
+  </g>
+
+  <rect x="1122" y="60" width="72" height="72" rx="22" fill="url(#accent)" opacity="0.15"/>
+  <rect x="1088" y="322" width="96" height="48" rx="18" fill="url(#accent)" opacity="0.15"/>
+</svg>
+"""
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Generate the GitHub profile banner SVG.")
+    parser.add_argument("--username", default="Meet-Miyani")
+    parser.add_argument("--output", default="assets/profile-banner.svg")
+    parser.add_argument("--followers", type=int)
+    parser.add_argument("--stars", type=int)
+    parser.add_argument("--repos", type=int)
+    parser.add_argument("--token")
+    args = parser.parse_args()
+
+    if args.followers is None or args.stars is None or args.repos is None:
+        metrics = fetch_metrics(args.username, args.token)
+        followers = metrics["followers"] if args.followers is None else args.followers
+        stars = metrics["total_stars"] if args.stars is None else args.stars
+        repos = metrics["public_repos"] if args.repos is None else args.repos
+    else:
+        followers = args.followers
+        stars = args.stars
+        repos = args.repos
+
+    updated_label = dt.datetime.utcnow().strftime("%b %d, %Y")
+    svg = build_svg(
+        followers=followers,
+        total_stars=stars,
+        public_repos=repos,
+        updated_label=updated_label,
+    )
+    output_path = Path(args.output)
+    output_path.write_text(svg, encoding="utf-8")
+
+
+if __name__ == "__main__":
+    main()
