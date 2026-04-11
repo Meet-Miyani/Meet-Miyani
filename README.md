@@ -25,26 +25,26 @@ I like the deep end. KSP annotation processing, Compose Multiplatform, BLE hardw
 <table>
   <tr>
     <td valign="top" width="50%">
-      <strong><a href="https://github.com/Meet-Miyani/compose-skill">compose-skill</a></strong><br/>
-      Public AI-agent skill for Jetpack Compose and Compose Multiplatform, covering architecture, state handling, data layers, performance, testing, and cross-platform patterns. Current GitHub signal: <code>144 stars</code>.
+      <strong><a href="https://github.com/Meet-Miyani/compose-skill">compose-skill</a></strong> · <code>144 ★</code><br/><br/>
+      Reference skill for AI coding agents working in Jetpack Compose and Compose Multiplatform. Covers MVI, Navigation 3, Koin/Hilt, Ktor, data layers, Paging 3, animations, performance, testing, and CMP cross-platform patterns.
     </td>
     <td valign="top" width="50%">
-      <strong><a href="https://github.com/Meet-Miyani/Eventics">Eventics</a></strong><br/>
-      Android event logging library that turns typed event models into analytics payloads, showing practical KSP/codegen design. Current GitHub signal: <code>2 stars</code>.
+      <strong><a href="https://github.com/Meet-Miyani/Eventics">Eventics</a></strong><br/><br/>
+      KSP-powered Android event logging library. Define typed event classes with annotations, get generated analytics payload code — no manual wiring.
     </td>
   </tr>
   <tr>
     <td valign="top" width="50%">
-      <strong><a href="https://play.google.com/store/apps/details?id=avinya.tech.ringfit">RingFit</a></strong><br/>
-      Consumer Android app with custom measurement UX and utility flows. Current Play Store milestone: <code>500K+</code> installs.
+      <strong><a href="https://play.google.com/store/apps/details?id=avinya.tech.ringfit">RingFit</a></strong> · <code>500K+ installs</code><br/><br/>
+      Ring size measurement app with a custom canvas-drawn ruler. Built solo, published independently.
     </td>
     <td valign="top" width="50%">
-      <strong><a href="https://play.google.com/store/apps/details?id=avinya.tech.yt">ViewTube</a></strong><br/>
-      YouTube-style video player with online/offline playback, subtitles, and broad-format support. Current Play Store milestone: <code>100K+</code> installs.
+      <strong><a href="https://play.google.com/store/apps/details?id=avinya.tech.yt">ViewTube</a></strong> · <code>100K+ installs</code><br/><br/>
+      Video player built on VLC for broad format support — YouTube-like UI, offline playback, subtitles, and memory-efficient Shorts-style scrolling.
     </td>
   </tr>
 </table>
-<p><sub>Also live on Play Store: QR Code Generator (<code>1K+</code>) and CricScore (<code>5K+</code>).</sub></p>
+<p><sub>Also on Play Store: <a href="https://play.google.com/store/apps/details?id=avinya.tech.qrcode">QR Code Generator</a> (<code>1K+</code>) · <a href="https://play.google.com/store/apps/details?id=avinya.tech.cricscore">CricScore</a> (<code>5K+</code>)</sub></p>
 <!-- dynamic-selected-work:end -->
 
 ---
@@ -54,15 +54,14 @@ I like the deep end. KSP annotation processing, Compose Multiplatform, BLE hardw
 <!-- dynamic-live-metrics:start -->
 <table>
   <tr>
-    <td align="center" width="16.6%"><strong>12</strong><br/>GitHub followers</td>
-    <td align="center" width="16.6%"><strong>149</strong><br/>Repo stars</td>
-    <td align="center" width="16.6%"><strong>5</strong><br/>Public repos</td>
-    <td align="center" width="16.6%"><strong>99</strong><br/>Stack Overflow rep</td>
-    <td align="center" width="16.6%"><strong>4</strong><br/>Medium stories</td>
-    <td align="center" width="16.6%"><strong>606K+</strong><br/>Play Store installs</td>
+    <td align="center"><strong>12</strong><br/><sub>GitHub followers</sub></td>
+    <td align="center"><strong>149</strong><br/><sub>Repo stars</sub></td>
+    <td align="center"><strong>5</strong><br/><sub>Public repos</sub></td>
+    <td align="center"><strong>4</strong><br/><sub>Medium stories</sub></td>
+    <td align="center"><strong>606K+</strong><br/><sub>Play Store installs</sub></td>
   </tr>
 </table>
-<p align="center"><sub>Refreshed Apr 11, 2026 UTC by GitHub Actions.</sub></p>
+<p align="center"><sub>Refreshed Apr 11, 2026 UTC · auto-updated daily via GitHub Actions</sub></p>
 <!-- dynamic-live-metrics:end -->
 
 > Building now: `Pushman` and a Compose UI library project. Work in progress, not presented as launched.
@@ -81,10 +80,8 @@ I like the deep end. KSP annotation processing, Compose Multiplatform, BLE hardw
 ## Writing
 
 <!-- dynamic-public-footprint:start -->
-- [Medium](https://meet-miyani.medium.com/) has `4` published stories. Latest: [AI Skill for Compose &amp; Compose Multiplatform](https://meet-miyani.medium.com/ai-skill-for-compose-compose-multiplatform-5fb2e56368ae?source=rss-8f91a9c1967f------2).
-- [Bugfender](https://bugfender.com/author/meet-miyani/) — 3 published articles on Kotlin.
-- [Stack Overflow](https://stackoverflow.com/users/20559937/meet-miyani) currently shows `99` reputation and `6` bronze badges.
-- [Play Store developer page](https://play.google.com/store/apps/dev?id=7045442356661226869) currently reflects `606K+` aggregate installs across `4` public apps.
+- [Medium](https://meet-miyani.medium.com/) · `4` stories published. Latest: [AI Skill for Compose &amp; Compose Multiplatform](https://meet-miyani.medium.com/ai-skill-for-compose-compose-multiplatform-5fb2e56368ae?source=rss-8f91a9c1967f------2).
+- [Bugfender](https://bugfender.com/author/meet-miyani/) · 3 articles — Kotlin extension functions, Kotlin vs Java, Kotlin arrays.
 <!-- dynamic-public-footprint:end -->
 
 ---
