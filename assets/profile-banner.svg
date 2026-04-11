@@ -1,98 +1,194 @@
 <svg width="1280" height="420" viewBox="0 0 1280 420" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="56" y1="24" x2="1188" y2="394" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#08131F"/>
-      <stop offset="0.52" stop-color="#0D2131"/>
-      <stop offset="1" stop-color="#123A50"/>
+    <!-- Deep navy base -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#060D1A"/>
+      <stop offset="100%" stop-color="#0A1525"/>
     </linearGradient>
-    <linearGradient id="accent" x1="236" y1="88" x2="592" y2="318" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#39D98A"/>
-      <stop offset="1" stop-color="#32B1FF"/>
+
+    <!-- Top rainbow strip -->
+    <linearGradient id="strip" x1="0" y1="0" x2="1280" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#00D9A3"/>
+      <stop offset="48%"  stop-color="#3B9EFF"/>
+      <stop offset="100%" stop-color="#9B8FFF"/>
     </linearGradient>
-    <linearGradient id="glow" x1="900" y1="96" x2="1162" y2="296" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#32B1FF" stop-opacity="0.95"/>
-      <stop offset="1" stop-color="#39D98A" stop-opacity="0.24"/>
+
+    <!-- Name text gradient -->
+    <linearGradient id="nameGrad" x1="56" y1="0" x2="420" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#F0F8FF"/>
+      <stop offset="100%" stop-color="#A4C8E8"/>
     </linearGradient>
+
+    <!-- Column divider — fades at both ends -->
+    <linearGradient id="divLine" x1="703" y1="28" x2="703" y2="392" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#00D9A3" stop-opacity="0"/>
+      <stop offset="25%"  stop-color="#1B4A6B" stop-opacity="0.7"/>
+      <stop offset="75%"  stop-color="#1B4A6B" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#1B4A6B" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Subtle glow in bottom-left corner -->
+    <radialGradient id="glowL" cx="0" cy="1" r="0.7">
+      <stop offset="0%"   stop-color="#00D9A3" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#00D9A3" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Subtle glow top-right -->
+    <radialGradient id="glowR" cx="1" cy="0" r="0.6">
+      <stop offset="0%"   stop-color="#3B9EFF" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#3B9EFF" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
-  <rect x="12" y="12" width="1256" height="396" rx="28" fill="url(#bg)"/>
-  <rect x="12" y="12" width="1256" height="396" rx="28" stroke="#24465F" stroke-width="2"/>
+  <!-- ── BACKGROUND ── -->
+  <rect width="1280" height="420" rx="20" fill="url(#bg)"/>
+  <rect width="1280" height="420" rx="20" fill="url(#glowL)"/>
+  <rect width="1280" height="420" rx="20" fill="url(#glowR)"/>
 
-  <g opacity="0.18">
-    <path d="M76 52H1204" stroke="#6E8EA4"/>
-    <path d="M76 100H1204" stroke="#6E8EA4"/>
-    <path d="M76 148H1204" stroke="#6E8EA4"/>
-    <path d="M76 196H1204" stroke="#6E8EA4"/>
-    <path d="M76 244H1204" stroke="#6E8EA4"/>
-    <path d="M76 292H1204" stroke="#6E8EA4"/>
-    <path d="M76 340H1204" stroke="#6E8EA4"/>
-    <path d="M76 388H1204" stroke="#6E8EA4"/>
-    <path d="M140 36V396" stroke="#6E8EA4"/>
-    <path d="M236 36V396" stroke="#6E8EA4"/>
-    <path d="M332 36V396" stroke="#6E8EA4"/>
-    <path d="M428 36V396" stroke="#6E8EA4"/>
-    <path d="M524 36V396" stroke="#6E8EA4"/>
-    <path d="M620 36V396" stroke="#6E8EA4"/>
-    <path d="M716 36V396" stroke="#6E8EA4"/>
-    <path d="M812 36V396" stroke="#6E8EA4"/>
-    <path d="M908 36V396" stroke="#6E8EA4"/>
-    <path d="M1004 36V396" stroke="#6E8EA4"/>
-    <path d="M1100 36V396" stroke="#6E8EA4"/>
-  </g>
+  <!-- Hairline border -->
+  <rect x="1" y="1" width="1278" height="418" rx="20"
+        stroke="#14304D" stroke-width="1.5" fill="none"/>
 
-  <g opacity="0.9">
-    <rect x="78" y="78" width="146" height="36" rx="18" fill="#102637"/>
-    <circle cx="94" cy="96" r="5" fill="#39D98A"/>
-    <text x="108" y="102" fill="#D7E3EB" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600">Kotlin</text>
+  <!-- Rainbow accent strip (3 px) -->
+  <rect x="0" y="0" width="1280" height="3" rx="1.5" fill="url(#strip)"/>
 
-    <rect x="236" y="78" width="156" height="36" rx="18" fill="#102637"/>
-    <circle cx="252" cy="96" r="5" fill="#32B1FF"/>
-    <text x="266" y="102" fill="#D7E3EB" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600">Android</text>
-  </g>
+  <!-- Column divider -->
+  <line x1="703" y1="28" x2="703" y2="392" stroke="url(#divLine)" stroke-width="1"/>
 
-  <text x="78" y="164" fill="#F7FBFE" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700">Meet Miyani</text>
-  <text x="78" y="214" fill="#D0DEE8" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="500">Senior Android Developer</text>
-  <text x="78" y="258" fill="#AFC1CF" font-family="Segoe UI, Arial, sans-serif" font-size="20">
-    <tspan x="78" dy="0">Architecture modernization, scalable Android systems,</tspan>
-    <tspan x="78" dy="29">KSP code generation, and production mobile delivery.</tspan>
-    <tspan x="78" dy="29">Open source, shipped apps, and public technical writing.</tspan>
+
+  <!-- ═══════════════════════════════════════════
+       LEFT COLUMN   (x safe: 56 – 660)
+       ═══════════════════════════════════════════ -->
+
+  <!-- 3 skill pills  (y_top=52, h=28, rx=14) -->
+  <rect x="56"  y="52" width="84"  height="28" rx="14" fill="#0B1E34" stroke="#183252" stroke-width="1"/>
+  <circle cx="70"  cy="66" r="3.5" fill="#00D9A3"/>
+  <text x="79"  y="71" fill="#8BBDD8" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="600">Kotlin</text>
+
+  <rect x="150" y="52" width="100" height="28" rx="14" fill="#0B1E34" stroke="#183252" stroke-width="1"/>
+  <circle cx="164" cy="66" r="3.5" fill="#3B9EFF"/>
+  <text x="173" y="71" fill="#8BBDD8" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="600">Android</text>
+
+  <rect x="260" y="52" width="148" height="28" rx="14" fill="#0B1E34" stroke="#183252" stroke-width="1"/>
+  <circle cx="274" cy="66" r="3.5" fill="#9B8FFF"/>
+  <text x="283" y="71" fill="#8BBDD8" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="600">Open to Remote</text>
+
+  <!-- Name  (baseline y=142, 50px bold) -->
+  <text x="56" y="142"
+        fill="url(#nameGrad)"
+        font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif"
+        font-size="50" font-weight="700"
+        letter-spacing="-1">Meet Miyani</text>
+
+  <!-- Title  (baseline y=183) -->
+  <text x="56" y="183"
+        fill="#3E6E96"
+        font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif"
+        font-size="21" font-weight="500"
+        letter-spacing="0.3">Senior Android Developer</text>
+
+  <!-- Thin rule under title -->
+  <rect x="56" y="194" width="180" height="1.5" rx="0.75" fill="#152E48"/>
+
+  <!-- Description lines — each a standalone <text>, no tspan stacking -->
+  <text x="56" y="218" fill="#3E6E96" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="15">Architecture modernization · KSP codegen · Compose Multiplatform</text>
+  <text x="56" y="238" fill="#3E6E96" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="15">Shared library design · CI/CD · Technical writing</text>
+  <text x="56" y="256" fill="#1E3A58" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13">Surat, India  ·  miyanimeet02@gmail.com</text>
+
+  <!-- ── 4 stat badges  (y_top=278, h=46, rx=11) ──
+       Validated widths: B1=110 B2=133 B3=127 B4=158
+       x positions:      56    176    319    456
+       Right edge: 456+158=614 ≤ 660 ✓ -->
+
+  <!-- B1: 5+ years -->
+  <rect x="56"  y="278" width="110" height="46" rx="11" fill="#0B1E34" stroke="#183252" stroke-width="1"/>
+  <text x="111" y="298" text-anchor="middle" fill="#00D9A3" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="19" font-weight="700">5+</text>
+  <text x="111" y="316" text-anchor="middle" fill="#2A4A68" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif"  font-size="11">years exp.</text>
+
+  <!-- B2: 500K+ downloads -->
+  <rect x="176" y="278" width="133" height="46" rx="11" fill="#0B1E34" stroke="#183252" stroke-width="1"/>
+  <text x="242" y="298" text-anchor="middle" fill="#3B9EFF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="19" font-weight="700">500K+</text>
+  <text x="242" y="316" text-anchor="middle" fill="#2A4A68" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif"  font-size="11">Play Store DLs</text>
+
+  <!-- B3: 3 apps -->
+  <rect x="319" y="278" width="127" height="46" rx="11" fill="#0B1E34" stroke="#183252" stroke-width="1"/>
+  <text x="382" y="298" text-anchor="middle" fill="#9B8FFF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="19" font-weight="700">3 apps</text>
+  <text x="382" y="316" text-anchor="middle" fill="#2A4A68" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif"  font-size="11">in production</text>
+
+  <!-- B4: 7 articles -->
+  <rect x="456" y="278" width="158" height="46" rx="11" fill="#0B1E34" stroke="#183252" stroke-width="1"/>
+  <text x="535" y="298" text-anchor="middle" fill="#F5A623" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="19" font-weight="700">7 articles</text>
+  <text x="535" y="316" text-anchor="middle" fill="#2A4A68" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif"  font-size="10.5">Medium · Bugfender</text>
+
+  <!-- Footer contact (baseline y=382) -->
+  <text x="56" y="382" fill="#1A3452" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11.5">
+    miyanimeet02@gmail.com  ·  github.com/Meet-Miyani  ·  meet-miyani.medium.com
   </text>
 
-  <g opacity="0.95">
-    <rect x="78" y="325" width="148" height="42" rx="15" fill="#0D1F2E" stroke="#1D3A50"/>
-    <text x="152" y="351" fill="#E6EFF5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">5+ years</text>
 
-    <rect x="238" y="325" width="196" height="42" rx="15" fill="#0D1F2E" stroke="#1D3A50"/>
-    <text x="336" y="351" fill="#E6EFF5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">500K+ downloads</text>
+  <!-- ═══════════════════════════════════════════
+       RIGHT COLUMN  (x safe: 720 – 1232)
+       ═══════════════════════════════════════════ -->
 
-    <rect x="446" y="325" width="190" height="42" rx="15" fill="#0D1F2E" stroke="#1D3A50"/>
-    <text x="541" y="351" fill="#E6EFF5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">3 production apps</text>
+  <!-- Column header (baseline y=58) -->
+  <text x="724" y="58" fill="#1A3452" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11">GitHub activity · Updated Apr 11, 2026</text>
+  <!-- Teal accent line -->
+  <rect x="724" y="64" width="38" height="1.5" rx="0.75" fill="#00D9A3"/>
+
+  <!-- ── 3 metric cards  (y_top=76, h=128)
+       x: 720, 884, 1048 — each w=154, right edge 1202 ≤ 1232 ✓ -->
+
+  <!-- Followers card -->
+  <rect x="720"  y="76" width="154" height="128" rx="14" fill="#0B1E34" stroke="#183252" stroke-width="1"/>
+  <rect x="720"  y="76" width="154" height="3"   rx="1.5" fill="#00D9A3"/>
+  <text x="797"  y="128" text-anchor="middle" fill="#EAF4FF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="36" font-weight="700">12</text>
+  <text x="797"  y="152" text-anchor="middle" fill="#2A4A68" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif"  font-size="13">Followers</text>
+  <text x="797"  y="170" text-anchor="middle" fill="#00D9A3" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif"  font-size="10.5" opacity="0.6">github.com</text>
+
+  <!-- Stars card -->
+  <rect x="884"  y="76" width="154" height="128" rx="14" fill="#0B1E34" stroke="#183252" stroke-width="1"/>
+  <rect x="884"  y="76" width="154" height="3"   rx="1.5" fill="#F5A623"/>
+  <text x="961"  y="128" text-anchor="middle" fill="#EAF4FF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="36" font-weight="700">149</text>
+  <text x="961"  y="152" text-anchor="middle" fill="#2A4A68" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif"  font-size="13">Stars</text>
+  <text x="961"  y="170" text-anchor="middle" fill="#F5A623" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif"  font-size="10.5" opacity="0.6">across repos</text>
+
+  <!-- Public repos card -->
+  <rect x="1048" y="76" width="154" height="128" rx="14" fill="#0B1E34" stroke="#183252" stroke-width="1"/>
+  <rect x="1048" y="76" width="154" height="3"   rx="1.5" fill="#3B9EFF"/>
+  <text x="1125" y="128" text-anchor="middle" fill="#EAF4FF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="36" font-weight="700">5</text>
+  <text x="1125" y="152" text-anchor="middle" fill="#2A4A68" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif"  font-size="13">Public repos</text>
+  <text x="1125" y="170" text-anchor="middle" fill="#3B9EFF" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif"  font-size="10.5" opacity="0.6">github.com</text>
+
+  <!-- ── Wide KSP highlight card  (y_top=218, h=52, right=1232 ✓) -->
+  <rect x="720" y="218" width="512" height="52" rx="10" fill="#0B1E34" stroke="#183252" stroke-width="1"/>
+  <rect x="720" y="218" width="4"   height="52" rx="2"  fill="#00D9A3"/>
+  <text x="740" y="240" fill="#C8E0F4" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="700">KSP · annotation-driven codegen</text>
+  <text x="740" y="259" fill="#2A4A68" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif"  font-size="12">auto-generated analytics payloads · type-safe notification parsing</text>
+
+  <!-- ── Two smaller highlight cards  (y_top=282, h=52)
+       x=720 w=245 | x=977 w=245 — right edge 1222 ≤ 1232 ✓ -->
+
+  <!-- Compose Multiplatform -->
+  <rect x="720" y="282" width="245" height="52" rx="10" fill="#0B1E34" stroke="#183252" stroke-width="1"/>
+  <rect x="720" y="282" width="4"   height="52" rx="2"  fill="#3B9EFF"/>
+  <text x="740" y="304" fill="#C8E0F4" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13.5" font-weight="700">Compose Multiplatform</text>
+  <text x="740" y="322" fill="#2A4A68" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif"  font-size="12">5 targets — Android, iOS, desktop</text>
+
+  <!-- Play Store -->
+  <rect x="977" y="282" width="245" height="52" rx="10" fill="#0B1E34" stroke="#183252" stroke-width="1"/>
+  <rect x="977" y="282" width="4"   height="52" rx="2"  fill="#9B8FFF"/>
+  <text x="997" y="304" fill="#C8E0F4" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13.5" font-weight="700">600K+ Play Store installs</text>
+  <text x="997" y="322" fill="#2A4A68" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif"  font-size="12">4 indie apps · built solo</text>
+
+  <!-- ── Decorative rings — top-right corner, 8% opacity ── -->
+  <g opacity="0.08">
+    <circle cx="1262" cy="28" r="72" stroke="#3B9EFF" stroke-width="1.5" fill="none"/>
+    <circle cx="1262" cy="28" r="50" stroke="#3B9EFF" stroke-width="1.5" fill="none"/>
+    <circle cx="1262" cy="28" r="28" stroke="#00D9A3" stroke-width="1.5" fill="none"/>
   </g>
 
-  <g opacity="0.88">
-    <path d="M868 140C914 114 958 132 995 120C1041 104 1081 68 1148 82" stroke="url(#glow)" stroke-width="6" stroke-linecap="round"/>
-    <path d="M855 314C897 292 940 314 986 298C1038 280 1078 240 1138 210" stroke="url(#glow)" stroke-width="6" stroke-linecap="round"/>
-  </g>
-
-  <g opacity="0.97">
-    <rect x="824" y="88" width="352" height="88" rx="24" fill="#102536" stroke="#1D3A50"/>
-    <text x="852" y="122" fill="#F0F6FA" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">Live GitHub signals</text>
-    <text x="852" y="149" fill="#AFC1CF" font-family="Segoe UI, Arial, sans-serif" font-size="16">Followers, public repo stars, and repository count.</text>
-    <text x="852" y="169" fill="#7FA0B5" font-family="Segoe UI, Arial, sans-serif" font-size="13">Updated Apr 11, 2026</text>
-
-    <rect x="770" y="204" width="130" height="108" rx="24" fill="#102536" stroke="#1D3A50"/>
-    <text x="835" y="248" fill="#F7FBFE" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">12</text>
-    <text x="835" y="277" fill="#AFC1CF" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16">Followers</text>
-
-    <rect x="919" y="204" width="130" height="108" rx="24" fill="#102536" stroke="#1D3A50"/>
-    <text x="984" y="248" fill="#F7FBFE" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">149</text>
-    <text x="984" y="277" fill="#AFC1CF" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16">Stars</text>
-
-    <rect x="1068" y="204" width="130" height="108" rx="24" fill="#102536" stroke="#1D3A50"/>
-    <text x="1133" y="248" fill="#F7FBFE" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">5</text>
-    <text x="1133" y="277" fill="#AFC1CF" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16">Public repos</text>
-  </g>
-
-  <rect x="1122" y="60" width="72" height="72" rx="22" fill="url(#accent)" opacity="0.15"/>
-  <rect x="1088" y="322" width="96" height="48" rx="18" fill="url(#accent)" opacity="0.15"/>
+  <!-- Right footer (aligned with left footer at y=382) -->
+  <text x="724" y="382" fill="#1A3452" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="11.5">
+    open to remote  ·  android · kotlin · ksp · compose
+  </text>
 </svg>
