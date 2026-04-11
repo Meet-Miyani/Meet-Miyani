@@ -89,12 +89,19 @@ def fetch_github_metrics() -> dict[str, object]:
         headers["Authorization"] = f"Bearer {token}"
 
     user = fetch_json(f"https://api.github.com/users/{GITHUB_USERNAME}", headers=headers)
-    repos = fetch_json(f"https://api.github.com/users/{GITHUB_USERNAME}/repos?per_page=100", headers=headers)
+    repos = fetch_json(
+        f"https://api.github.com/users/{GITHUB_USERNAME}/repos?per_page=100",
+        headers=headers,
+    )
 
     if not isinstance(user, dict) or not isinstance(repos, list):
         raise ValueError("Unexpected GitHub API response")
 
-    repo_map = {repo["name"]: repo for repo in repos if isinstance(repo, dict) and "name" in repo}
+    repo_map = {
+        repo["name"]: repo
+        for repo in repos
+        if isinstance(repo, dict) and "name" in repo
+    }
     total_stars = sum(int(repo.get("stargazers_count", 0)) for repo in repo_map.values())
 
     return {
@@ -107,7 +114,9 @@ def fetch_github_metrics() -> dict[str, object]:
 
 
 def fetch_stackoverflow_metrics() -> dict[str, int]:
-    payload = fetch_json(f"https://api.stackexchange.com/2.3/users/{STACKOVERFLOW_USER_ID}?site=stackoverflow")
+    payload = fetch_json(
+        f"https://api.stackexchange.com/2.3/users/{STACKOVERFLOW_USER_ID}?site=stackoverflow"
+    )
     if not isinstance(payload, dict) or not payload.get("items"):
         raise ValueError("Unexpected Stack Overflow response")
     user = payload["items"][0]
@@ -171,21 +180,19 @@ def replace_marker_block(text: str, marker: str, replacement: str) -> str:
 
 def render_live_metrics(data: dict[str, object], updated_label: str) -> str:
     github = data["github"]
-    stackoverflow = data["stackoverflow"]
     medium = data["medium"]
     play = data["play"]
 
     return f"""<table>
   <tr>
-    <td align="center" width="16.6%"><strong>{github['followers']}</strong><br/>GitHub followers</td>
-    <td align="center" width="16.6%"><strong>{github['total_stars']}</strong><br/>Repo stars</td>
-    <td align="center" width="16.6%"><strong>{github['public_repos']}</strong><br/>Public repos</td>
-    <td align="center" width="16.6%"><strong>{stackoverflow['reputation']}</strong><br/>Stack Overflow rep</td>
-    <td align="center" width="16.6%"><strong>{medium['story_count']}</strong><br/>Medium stories</td>
-    <td align="center" width="16.6%"><strong>{play['total_installs_display']}</strong><br/>Play Store installs</td>
+    <td align="center"><strong>{github['followers']}</strong><br/><sub>GitHub followers</sub></td>
+    <td align="center"><strong>{github['total_stars']}</strong><br/><sub>Repo stars</sub></td>
+    <td align="center"><strong>{github['public_repos']}</strong><br/><sub>Public repos</sub></td>
+    <td align="center"><strong>{medium['story_count']}</strong><br/><sub>Medium stories</sub></td>
+    <td align="center"><strong>{play['total_installs_display']}</strong><br/><sub>Play Store installs</sub></td>
   </tr>
 </table>
-<p align="center"><sub>Refreshed {updated_label} UTC by GitHub Actions.</sub></p>"""
+<p align="center"><sub>Refreshed {updated_label} UTC · auto-updated daily via GitHub Actions</sub></p>"""
 
 
 def render_selected_work(data: dict[str, object]) -> str:
@@ -195,41 +202,35 @@ def render_selected_work(data: dict[str, object]) -> str:
     return f"""<table>
   <tr>
     <td valign="top" width="50%">
-      <strong><a href="https://github.com/Meet-Miyani/compose-skill">compose-skill</a></strong><br/>
-      Public AI-agent skill for Jetpack Compose and Compose Multiplatform, covering architecture, state handling, data layers, performance, testing, and cross-platform patterns. Current GitHub signal: <code>{github['compose_skill_stars']} stars</code>.
+      <strong><a href="https://github.com/Meet-Miyani/compose-skill">compose-skill</a></strong> · <code>{github['compose_skill_stars']} ★</code><br/><br/>
+      Reference skill for AI coding agents working in Jetpack Compose and Compose Multiplatform. Covers MVI, Navigation 3, Koin/Hilt, Ktor, data layers, Paging 3, animations, performance, testing, and CMP cross-platform patterns.
     </td>
     <td valign="top" width="50%">
-      <strong><a href="https://github.com/Meet-Miyani/Eventics">Eventics</a></strong><br/>
-      Android event logging library that turns typed event models into analytics payloads, showing practical KSP/codegen design. Current GitHub signal: <code>{github['eventics_stars']} stars</code>.
+      <strong><a href="https://github.com/Meet-Miyani/Eventics">Eventics</a></strong><br/><br/>
+      KSP-powered Android event logging library. Define typed event classes with annotations, get generated analytics payload code — no manual wiring.
     </td>
   </tr>
   <tr>
     <td valign="top" width="50%">
-      <strong><a href="https://play.google.com/store/apps/details?id=avinya.tech.ringfit">RingFit</a></strong><br/>
-      Consumer Android app with custom measurement UX and utility flows. Current Play Store milestone: <code>{apps_by_name['RingFit']['installs']}</code> installs.
+      <strong><a href="https://play.google.com/store/apps/details?id=avinya.tech.ringfit">RingFit</a></strong> · <code>{apps_by_name['RingFit']['installs']} installs</code><br/><br/>
+      Ring size measurement app with a custom canvas-drawn ruler. Built solo, published independently.
     </td>
     <td valign="top" width="50%">
-      <strong><a href="https://play.google.com/store/apps/details?id=avinya.tech.yt">ViewTube</a></strong><br/>
-      YouTube-style video player with online/offline playback, subtitles, and broad-format support. Current Play Store milestone: <code>{apps_by_name['ViewTube']['installs']}</code> installs.
+      <strong><a href="https://play.google.com/store/apps/details?id=avinya.tech.yt">ViewTube</a></strong> · <code>{apps_by_name['ViewTube']['installs']} installs</code><br/><br/>
+      Video player built on VLC for broad format support — YouTube-like UI, offline playback, subtitles, and memory-efficient Shorts-style scrolling.
     </td>
   </tr>
 </table>
-<p><sub>Also live on Play Store: QR Code Generator (<code>{apps_by_name['QR Code Generator']['installs']}</code>) and CricScore (<code>{apps_by_name['CricScore']['installs']}</code>).</sub></p>"""
+<p><sub>Also on Play Store: <a href="https://play.google.com/store/apps/details?id=avinya.tech.qrcode">QR Code Generator</a> (<code>{apps_by_name['QR Code Generator']['installs']}</code>) · <a href="https://play.google.com/store/apps/details?id=avinya.tech.cricscore">CricScore</a> (<code>{apps_by_name['CricScore']['installs']}</code>)</sub></p>"""
 
 
 def render_public_footprint(data: dict[str, object]) -> str:
-    github = data["github"]
-    stackoverflow = data["stackoverflow"]
     medium = data["medium"]
-    play = data["play"]
     latest_title = html.escape(str(medium["latest_title"]))
     latest_link = str(medium["latest_link"])
 
-    return f"""- [Medium](https://meet-miyani.medium.com/) has `{medium['story_count']}` published stories. Latest: [{latest_title}]({latest_link}).
-- [Stack Overflow](https://stackoverflow.com/users/{STACKOVERFLOW_USER_ID}/meet-miyani) currently shows `{stackoverflow['reputation']}` reputation and `{stackoverflow['bronze_badges']}` bronze badges.
-- [Play Store developer page]({PLAY_DEVELOPER_URL}) currently reflects `{play['total_installs_display']}` aggregate installs across `{len(play['apps'])}` public apps.
-- [GitHub](https://github.com/{GITHUB_USERNAME}) currently shows `{github['total_stars']}` stars across `{github['public_repos']}` public repositories.
-- [LinkedIn](https://www.linkedin.com/in/meet-miyani-34204121b/) remains the main professional profile and contact context."""
+    return f"""- [Medium](https://meet-miyani.medium.com/) · `{medium['story_count']}` stories published. Latest: [{latest_title}]({latest_link}).
+- [Bugfender](https://bugfender.com/author/meet-miyani/) · 3 articles — Kotlin extension functions, Kotlin vs Java, Kotlin arrays."""
 
 
 def refresh_readme(data: dict[str, object], updated_label: str) -> None:
@@ -248,11 +249,12 @@ def refresh_banner(data: dict[str, object], updated_label: str) -> None:
         public_repos=int(github["public_repos"]),
         updated_label=updated_label,
     )
+    BANNER_PATH.parent.mkdir(parents=True, exist_ok=True)
     BANNER_PATH.write_text(svg, encoding="utf-8")
 
 
 def main() -> None:
-    updated_label = dt.datetime.utcnow().strftime("%b %d, %Y")
+    updated_label = dt.datetime.now(dt.timezone.utc).strftime("%b %d, %Y")
     data = {
         "github": fetch_github_metrics(),
         "stackoverflow": fetch_stackoverflow_metrics(),

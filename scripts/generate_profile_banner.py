@@ -49,103 +49,129 @@ def build_svg(*, followers: int, total_stars: int, public_repos: int, updated_la
     stars_text = compact_number(total_stars)
     repos_text = compact_number(public_repos)
 
+    sans = "'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif"
+    sans_d = "'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif"
+
     return f"""<svg width="1280" height="420" viewBox="0 0 1280 420" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="56" y1="24" x2="1188" y2="394" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#08131F"/>
-      <stop offset="0.52" stop-color="#0D2131"/>
-      <stop offset="1" stop-color="#123A50"/>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1280" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#06101E"/><stop offset="55%" stop-color="#091828"/><stop offset="100%" stop-color="#0C1E38"/>
     </linearGradient>
-    <linearGradient id="accent" x1="236" y1="88" x2="592" y2="318" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#39D98A"/>
-      <stop offset="1" stop-color="#32B1FF"/>
+    <linearGradient id="topBar" x1="0" y1="0" x2="1280" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00D9A3"/><stop offset="50%" stop-color="#4D9FFF"/><stop offset="100%" stop-color="#A78BFA"/>
     </linearGradient>
-    <linearGradient id="glow" x1="900" y1="96" x2="1162" y2="296" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#32B1FF" stop-opacity="0.95"/>
-      <stop offset="1" stop-color="#39D98A" stop-opacity="0.24"/>
+    <linearGradient id="divGrad" x1="700" y1="24" x2="700" y2="396" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00D9A3" stop-opacity="0"/><stop offset="28%" stop-color="#00D9A3" stop-opacity="0.4"/>
+      <stop offset="72%" stop-color="#4D9FFF" stop-opacity="0.3"/><stop offset="100%" stop-color="#4D9FFF" stop-opacity="0"/>
     </linearGradient>
+    <linearGradient id="nameGrad" x1="48" y1="0" x2="380" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EAF6FF"/><stop offset="100%" stop-color="#A8CCEB"/>
+    </linearGradient>
+    <pattern id="dotGrid" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="0.5" cy="0.5" r="0.75" fill="#1E3D60" opacity="0.45"/>
+    </pattern>
+    <radialGradient id="glowTL" cx="0.1" cy="0.9" r="0.55">
+      <stop offset="0%" stop-color="#00D9A3" stop-opacity="0.07"/><stop offset="100%" stop-color="#00D9A3" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.95" cy="0.1" r="0.5">
+      <stop offset="0%" stop-color="#4D9FFF" stop-opacity="0.09"/><stop offset="100%" stop-color="#4D9FFF" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
-  <rect x="12" y="12" width="1256" height="396" rx="28" fill="url(#bg)"/>
-  <rect x="12" y="12" width="1256" height="396" rx="28" stroke="#24465F" stroke-width="2"/>
+  <rect width="1280" height="420" rx="20" fill="url(#bgGrad)"/>
+  <rect width="1280" height="420" rx="20" fill="url(#dotGrid)"/>
+  <rect width="1280" height="420" rx="20" fill="url(#glowTL)"/>
+  <rect width="1280" height="420" rx="20" fill="url(#glowBR)"/>
+  <rect x="0" y="0" width="1280" height="3" rx="1.5" fill="url(#topBar)"/>
+  <rect x="0.75" y="0.75" width="1278.5" height="418.5" rx="20" stroke="#152E4A" stroke-width="1.5" fill="none"/>
+  <line x1="700" y1="24" x2="700" y2="396" stroke="url(#divGrad)" stroke-width="1"/>
 
-  <g opacity="0.18">
-    <path d="M76 52H1204" stroke="#6E8EA4"/>
-    <path d="M76 100H1204" stroke="#6E8EA4"/>
-    <path d="M76 148H1204" stroke="#6E8EA4"/>
-    <path d="M76 196H1204" stroke="#6E8EA4"/>
-    <path d="M76 244H1204" stroke="#6E8EA4"/>
-    <path d="M76 292H1204" stroke="#6E8EA4"/>
-    <path d="M76 340H1204" stroke="#6E8EA4"/>
-    <path d="M76 388H1204" stroke="#6E8EA4"/>
-    <path d="M140 36V396" stroke="#6E8EA4"/>
-    <path d="M236 36V396" stroke="#6E8EA4"/>
-    <path d="M332 36V396" stroke="#6E8EA4"/>
-    <path d="M428 36V396" stroke="#6E8EA4"/>
-    <path d="M524 36V396" stroke="#6E8EA4"/>
-    <path d="M620 36V396" stroke="#6E8EA4"/>
-    <path d="M716 36V396" stroke="#6E8EA4"/>
-    <path d="M812 36V396" stroke="#6E8EA4"/>
-    <path d="M908 36V396" stroke="#6E8EA4"/>
-    <path d="M1004 36V396" stroke="#6E8EA4"/>
-    <path d="M1100 36V396" stroke="#6E8EA4"/>
+  <!-- LEFT COLUMN -->
+  <rect x="48"  y="52" width="90"  height="30" rx="15" fill="#0A1D34" stroke="#163254" stroke-width="1"/>
+  <circle cx="64"  cy="67" r="3.5" fill="#00D9A3"/>
+  <text x="73"  y="72" fill="#A6C6E6" font-family="{sans}" font-size="13" font-weight="600">Kotlin</text>
+
+  <rect x="148" y="52" width="104" height="30" rx="15" fill="#0A1D34" stroke="#163254" stroke-width="1"/>
+  <circle cx="164" cy="67" r="3.5" fill="#4D9FFF"/>
+  <text x="173" y="72" fill="#A6C6E6" font-family="{sans}" font-size="13" font-weight="600">Android</text>
+
+  <rect x="262" y="52" width="150" height="30" rx="15" fill="#0A1D34" stroke="#163254" stroke-width="1"/>
+  <circle cx="278" cy="67" r="3.5" fill="#A78BFA"/>
+  <text x="287" y="72" fill="#A6C6E6" font-family="{sans}" font-size="13" font-weight="600">Open to Remote</text>
+
+  <text x="48" y="148" fill="url(#nameGrad)" font-family="{sans_d}" font-size="48" font-weight="700" letter-spacing="-0.5">Meet Miyani</text>
+  <text x="48" y="185" fill="#5292C0" font-family="{sans}" font-size="20" font-weight="500" letter-spacing="0.25">Senior Android Developer</text>
+  <rect x="48" y="195" width="178" height="1.5" rx="0.75" fill="#163254"/>
+
+  <text x="48" y="223" fill="#638AB0" font-family="{sans}" font-size="15">Architecture modernization · KSP codegen · Compose Multiplatform</text>
+  <text x="48" y="245" fill="#638AB0" font-family="{sans}" font-size="15">Shared library design · CI/CD via GitHub Actions · Technical writing</text>
+  <text x="48" y="264" fill="#436082" font-family="{sans}" font-size="13.5">Surat, India  ·  7 published articles  ·  Play Store developer</text>
+
+  <rect x="48"  y="296" width="102" height="50" rx="11" fill="#0A1D34" stroke="#163254" stroke-width="1"/>
+  <text x="99"  y="316" text-anchor="middle" fill="#00D9A3" font-family="{sans_d}" font-size="19" font-weight="700">5+</text>
+  <text x="99"  y="334" text-anchor="middle" fill="#3A5A78" font-family="{sans}" font-size="11">years exp.</text>
+
+  <rect x="160" y="296" width="144" height="50" rx="11" fill="#0A1D34" stroke="#163254" stroke-width="1"/>
+  <text x="232" y="316" text-anchor="middle" fill="#4D9FFF" font-family="{sans_d}" font-size="19" font-weight="700">500K+</text>
+  <text x="232" y="334" text-anchor="middle" fill="#3A5A78" font-family="{sans}" font-size="11">Play Store DLs</text>
+
+  <rect x="314" y="296" width="122" height="50" rx="11" fill="#0A1D34" stroke="#163254" stroke-width="1"/>
+  <text x="375" y="316" text-anchor="middle" fill="#A78BFA" font-family="{sans_d}" font-size="19" font-weight="700">3 apps</text>
+  <text x="375" y="334" text-anchor="middle" fill="#3A5A78" font-family="{sans}" font-size="11">in production</text>
+
+  <rect x="446" y="296" width="140" height="50" rx="11" fill="#0A1D34" stroke="#163254" stroke-width="1"/>
+  <text x="516" y="316" text-anchor="middle" fill="#F59E0B" font-family="{sans_d}" font-size="19" font-weight="700">7 articles</text>
+  <text x="516" y="334" text-anchor="middle" fill="#3A5A78" font-family="{sans}" font-size="11">Medium · Bugfender</text>
+
+  <text x="48" y="382" fill="#2A4A64" font-family="{sans}" font-size="11.5">Surat, India  ·  miyanimeet02@gmail.com  ·  github.com/Meet-Miyani  ·  meet-miyani.medium.com</text>
+
+  <!-- RIGHT COLUMN -->
+  <text x="724" y="70" fill="#D4EEF8" font-family="{sans_d}" font-size="17" font-weight="700">GitHub Activity</text>
+  <rect x="724" y="76" width="44" height="2" rx="1" fill="#00D9A3"/>
+  <text x="724" y="96" fill="#3A5A78" font-family="{sans}" font-size="12">Live signals · Updated {updated_label}</text>
+
+  <rect x="720"  y="112" width="160" height="122" rx="15" fill="#0A1D34" stroke="#163254" stroke-width="1"/>
+  <rect x="720"  y="112" width="160" height="3"   rx="1.5" fill="#00D9A3"/>
+  <text x="800"  y="163" text-anchor="middle" fill="#E6F4FF" font-family="{sans_d}" font-size="36" font-weight="700">{followers_text}</text>
+  <text x="800"  y="187" text-anchor="middle" fill="#3A5A78" font-family="{sans}" font-size="13">Followers</text>
+  <text x="800"  y="206" text-anchor="middle" fill="#00D9A3" font-family="{sans}" font-size="10.5" opacity="0.55">github.com</text>
+
+  <rect x="896"  y="112" width="160" height="122" rx="15" fill="#0A1D34" stroke="#163254" stroke-width="1"/>
+  <rect x="896"  y="112" width="160" height="3"   rx="1.5" fill="#F59E0B"/>
+  <text x="976"  y="163" text-anchor="middle" fill="#E6F4FF" font-family="{sans_d}" font-size="36" font-weight="700">{stars_text}</text>
+  <text x="976"  y="187" text-anchor="middle" fill="#3A5A78" font-family="{sans}" font-size="13">Stars</text>
+  <text x="976"  y="206" text-anchor="middle" fill="#F59E0B" font-family="{sans}" font-size="10.5" opacity="0.55">across repos</text>
+
+  <rect x="1072" y="112" width="160" height="122" rx="15" fill="#0A1D34" stroke="#163254" stroke-width="1"/>
+  <rect x="1072" y="112" width="160" height="3"   rx="1.5" fill="#4D9FFF"/>
+  <text x="1152" y="163" text-anchor="middle" fill="#E6F4FF" font-family="{sans_d}" font-size="36" font-weight="700">{repos_text}</text>
+  <text x="1152" y="187" text-anchor="middle" fill="#3A5A78" font-family="{sans}" font-size="13">Public repos</text>
+  <text x="1152" y="206" text-anchor="middle" fill="#4D9FFF" font-family="{sans}" font-size="10.5" opacity="0.55">github.com</text>
+
+  <!-- Wide highlight: KSP -->
+  <rect x="720" y="252" width="512" height="52" rx="11" fill="#0A1D34" stroke="#163254" stroke-width="1"/>
+  <rect x="720" y="252" width="4"   height="52" rx="2"  fill="#00D9A3"/>
+  <text x="740" y="274" fill="#D4EEF8" font-family="{sans_d}" font-size="14" font-weight="700">KSP · annotation-driven codegen</text>
+  <text x="740" y="293" fill="#3A5A78" font-family="{sans}" font-size="12.5">auto-generated analytics events + type-safe notification payload parsers</text>
+
+  <!-- Small: Compose Multiplatform -->
+  <rect x="720" y="316" width="249" height="50" rx="11" fill="#0A1D34" stroke="#163254" stroke-width="1"/>
+  <rect x="720" y="316" width="4"   height="50" rx="2"  fill="#4D9FFF"/>
+  <text x="740" y="337" fill="#D4EEF8" font-family="{sans_d}" font-size="13.5" font-weight="700">Compose Multiplatform</text>
+  <text x="740" y="355" fill="#3A5A78" font-family="{sans}" font-size="12">Android · iOS · Windows · Linux · macOS</text>
+
+  <!-- Small: Play Store -->
+  <rect x="983" y="316" width="249" height="50" rx="11" fill="#0A1D34" stroke="#163254" stroke-width="1"/>
+  <rect x="983" y="316" width="4"   height="50" rx="2"  fill="#A78BFA"/>
+  <text x="1003" y="337" fill="#D4EEF8" font-family="{sans_d}" font-size="13.5" font-weight="700">600K+ Play Store installs</text>
+  <text x="1003" y="355" fill="#3A5A78" font-family="{sans}" font-size="12">4 published apps · independent</text>
+
+  <!-- Decorative arcs -->
+  <g opacity="0.10">
+    <circle cx="1255" cy="30" r="70" stroke="#4D9FFF" stroke-width="1" fill="none"/>
+    <circle cx="1255" cy="30" r="48" stroke="#4D9FFF" stroke-width="1" fill="none"/>
+    <circle cx="1255" cy="30" r="26" stroke="#00D9A3" stroke-width="1" fill="none"/>
   </g>
-
-  <g opacity="0.9">
-    <rect x="78" y="78" width="146" height="36" rx="18" fill="#102637"/>
-    <circle cx="94" cy="96" r="5" fill="#39D98A"/>
-    <text x="108" y="102" fill="#D7E3EB" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600">Kotlin</text>
-
-    <rect x="236" y="78" width="156" height="36" rx="18" fill="#102637"/>
-    <circle cx="252" cy="96" r="5" fill="#32B1FF"/>
-    <text x="266" y="102" fill="#D7E3EB" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600">Android</text>
-  </g>
-
-  <text x="78" y="164" fill="#F7FBFE" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700">Meet Miyani</text>
-  <text x="78" y="214" fill="#D0DEE8" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="500">Senior Android Developer</text>
-  <text x="78" y="258" fill="#AFC1CF" font-family="Segoe UI, Arial, sans-serif" font-size="20">
-    <tspan x="78" dy="0">Architecture modernization, scalable Android systems,</tspan>
-    <tspan x="78" dy="29">KSP code generation, and production mobile delivery.</tspan>
-    <tspan x="78" dy="29">Open source, shipped apps, and public technical writing.</tspan>
-  </text>
-
-  <g opacity="0.95">
-    <rect x="78" y="325" width="148" height="42" rx="15" fill="#0D1F2E" stroke="#1D3A50"/>
-    <text x="152" y="351" fill="#E6EFF5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">5+ years</text>
-
-    <rect x="238" y="325" width="196" height="42" rx="15" fill="#0D1F2E" stroke="#1D3A50"/>
-    <text x="336" y="351" fill="#E6EFF5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">500K+ downloads</text>
-
-    <rect x="446" y="325" width="190" height="42" rx="15" fill="#0D1F2E" stroke="#1D3A50"/>
-    <text x="541" y="351" fill="#E6EFF5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">3 production apps</text>
-  </g>
-
-  <g opacity="0.88">
-    <path d="M868 140C914 114 958 132 995 120C1041 104 1081 68 1148 82" stroke="url(#glow)" stroke-width="6" stroke-linecap="round"/>
-    <path d="M855 314C897 292 940 314 986 298C1038 280 1078 240 1138 210" stroke="url(#glow)" stroke-width="6" stroke-linecap="round"/>
-  </g>
-
-  <g opacity="0.97">
-    <rect x="824" y="88" width="352" height="88" rx="24" fill="#102536" stroke="#1D3A50"/>
-    <text x="852" y="122" fill="#F0F6FA" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">Live GitHub signals</text>
-    <text x="852" y="149" fill="#AFC1CF" font-family="Segoe UI, Arial, sans-serif" font-size="16">Followers, public repo stars, and repository count.</text>
-    <text x="852" y="169" fill="#7FA0B5" font-family="Segoe UI, Arial, sans-serif" font-size="13">Updated {updated_label}</text>
-
-    <rect x="770" y="204" width="130" height="108" rx="24" fill="#102536" stroke="#1D3A50"/>
-    <text x="835" y="248" fill="#F7FBFE" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">{followers_text}</text>
-    <text x="835" y="277" fill="#AFC1CF" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16">Followers</text>
-
-    <rect x="919" y="204" width="130" height="108" rx="24" fill="#102536" stroke="#1D3A50"/>
-    <text x="984" y="248" fill="#F7FBFE" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">{stars_text}</text>
-    <text x="984" y="277" fill="#AFC1CF" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16">Stars</text>
-
-    <rect x="1068" y="204" width="130" height="108" rx="24" fill="#102536" stroke="#1D3A50"/>
-    <text x="1133" y="248" fill="#F7FBFE" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">{repos_text}</text>
-    <text x="1133" y="277" fill="#AFC1CF" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16">Public repos</text>
-  </g>
-
-  <rect x="1122" y="60" width="72" height="72" rx="22" fill="url(#accent)" opacity="0.15"/>
-  <rect x="1088" y="322" width="96" height="48" rx="18" fill="url(#accent)" opacity="0.15"/>
 </svg>
 """
 
@@ -170,7 +196,7 @@ def main() -> None:
         stars = args.stars
         repos = args.repos
 
-    updated_label = dt.datetime.utcnow().strftime("%b %d, %Y")
+    updated_label = dt.datetime.now(dt.timezone.utc).strftime("%b %d, %Y")
     svg = build_svg(
         followers=followers,
         total_stars=stars,
@@ -178,6 +204,7 @@ def main() -> None:
         updated_label=updated_label,
     )
     output_path = Path(args.output)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(svg, encoding="utf-8")
 
 
