@@ -1,0 +1,49 @@
+<svg width="1280" height="360" viewBox="0 0 1280 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#09121E"/>
+      <stop offset="100%" stop-color="#0D1C2D"/>
+    </linearGradient>
+    <linearGradient id="line" x1="102" y1="98" x2="1178" y2="98" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E405E" stop-opacity="0"/>
+      <stop offset="0.12" stop-color="#1E405E"/>
+      <stop offset="0.88" stop-color="#1E405E"/>
+      <stop offset="1" stop-color="#1E405E" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="360" rx="24" fill="url(#bg)"/>
+  <rect x="1" y="1" width="1278" height="358" rx="23" stroke="#15314C" stroke-width="1.5"/>
+
+  <text x="72" y="72" fill="#EAF5FF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="28" font-weight="700">Focus map</text>
+  <text x="72" y="99" fill="#5E85A7" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="15.5">The parts of Android work I tend to lean into most.</text>
+  <line x1="72" y1="124" x2="1208" y2="124" stroke="url(#line)" stroke-width="1.5"/>
+
+  <rect x="72" y="160" width="272" height="132" rx="18" fill="#0F2337" stroke="#1A3A58"/>
+  <rect x="72" y="160" width="5" height="132" rx="2.5" fill="#2EE6A6"/>
+  <text x="98" y="196" fill="#D8ECFA" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="650">Systems</text>
+  <text x="98" y="224" fill="#7394B1" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14.5">Shared libraries</text>
+  <text x="98" y="247" fill="#7394B1" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14.5">Modular architecture</text>
+  <text x="98" y="270" fill="#7394B1" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14.5">Delivery workflows</text>
+
+  <rect x="370" y="160" width="272" height="132" rx="18" fill="#0F2337" stroke="#1A3A58"/>
+  <rect x="370" y="160" width="5" height="132" rx="2.5" fill="#48A8FF"/>
+  <text x="396" y="196" fill="#D8ECFA" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="650">UI and runtime</text>
+  <text x="396" y="224" fill="#7394B1" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14.5">Jetpack Compose</text>
+  <text x="396" y="247" fill="#7394B1" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14.5">Media and rendering</text>
+  <text x="396" y="270" fill="#7394B1" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14.5">BLE and hardware edges</text>
+
+  <rect x="668" y="160" width="272" height="132" rx="18" fill="#0F2337" stroke="#1A3A58"/>
+  <rect x="668" y="160" width="5" height="132" rx="2.5" fill="#F5A623"/>
+  <text x="694" y="196" fill="#D8ECFA" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="650">Tooling</text>
+  <text x="694" y="224" fill="#7394B1" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14.5">KSP code generation</text>
+  <text x="694" y="247" fill="#7394B1" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14.5">Typed contracts</text>
+  <text x="694" y="270" fill="#7394B1" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14.5">Reusable developer ergonomics</text>
+
+  <rect x="966" y="160" width="242" height="132" rx="18" fill="#0F2337" stroke="#1A3A58"/>
+  <rect x="966" y="160" width="5" height="132" rx="2.5" fill="#9B8FFF"/>
+  <text x="992" y="196" fill="#D8ECFA" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="650">Shipping</text>
+  <text x="992" y="224" fill="#7394B1" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14.5">Play Store publishing</text>
+  <text x="992" y="247" fill="#7394B1" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14.5">Indie app maintenance</text>
+  <text x="992" y="270" fill="#7394B1" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14.5">Public engineering proof</text>
+</svg>
