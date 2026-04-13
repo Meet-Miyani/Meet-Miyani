@@ -67,7 +67,7 @@
 
   <rect x="986" y="128" width="208" height="92" rx="16" fill="#112740" stroke="#1A3A5B"/>
   <rect x="1002" y="144" width="34" height="4" rx="2" fill="#48A8FF"/>
-  <text x="1002" y="176" fill="#F3FAFF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="34" font-weight="700">149</text>
+  <text x="1002" y="176" fill="#F3FAFF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="34" font-weight="700">151</text>
   <text x="1002" y="198" fill="#5B83A7" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13">Repo stars</text>
 
   <rect x="766" y="236" width="208" height="92" rx="16" fill="#112740" stroke="#1A3A5B"/>
@@ -80,7 +80,7 @@
   <text x="1002" y="284" fill="#F3FAFF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="34" font-weight="700">4</text>
   <text x="1002" y="306" fill="#5B83A7" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13">Medium stories</text>
 
-  <text x="766" y="354" fill="#6B90B0" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="12.5">Also shipping across 5 public repos. Updated Apr 12, 2026.</text>
+  <text x="766" y="354" fill="#6B90B0" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="12.5">Also shipping across 5 public repos. Updated Apr 13, 2026.</text>
 
   <g opacity="0.12">
     <circle cx="1224" cy="42" r="74" stroke="#48A8FF" stroke-width="1.5" fill="none"/>
