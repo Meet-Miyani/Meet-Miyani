@@ -59,7 +59,7 @@ Most of my work sits below the feature layer—building shared libraries, codege
 <table>
   <tr>
     <td valign="top" width="50%">
-      <strong><a href="https://github.com/Meet-Miyani/compose-skill">compose-skill</a></strong> · <code>149 ★</code><br/><br/>
+      <strong><a href="https://github.com/Meet-Miyani/compose-skill">compose-skill</a></strong> · <code>150 ★</code><br/><br/>
       Public reference skill for AI coding agents working in Jetpack Compose and Compose Multiplatform. It packages architecture, state, navigation, performance, testing, and cross-platform patterns into something other developers can actually reuse.
     </td>
     <td valign="top" width="50%">
@@ -104,7 +104,7 @@ Most of my work sits below the feature layer—building shared libraries, codege
 <table>
   <tr>
     <td align="center" width="16.6%"><strong>12</strong><br/><sub>GitHub followers</sub></td>
-    <td align="center" width="16.6%"><strong>154</strong><br/><sub>Repo stars</sub></td>
+    <td align="center" width="16.6%"><strong>155</strong><br/><sub>Repo stars</sub></td>
     <td align="center" width="16.6%"><strong>5</strong><br/><sub>Public repos</sub></td>
     <td align="center" width="16.6%"><strong>99</strong><br/><sub>Stack Overflow rep</sub></td>
     <td align="center" width="16.6%"><strong>4</strong><br/><sub>Medium stories</sub></td>
