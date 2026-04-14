@@ -10,53 +10,50 @@
   <a href="https://play.google.com/store/apps/dev?id=7045442356661226869"><img src="https://img.shields.io/badge/Play%20Store-Published%20Apps-155E75?style=for-the-badge&logo=googleplay&logoColor=white" alt="Play Store" /></a>
 </p>
 
-Production Android engineer focused on systems that stay maintainable after launch: shared libraries, codegen, modular architecture, and shipping-heavy apps that have to behave in the real world.
-
-Most of the interesting work for me sits below the feature layer. I like the pieces that other teams inherit later: reliable app foundations, typed contracts, CI flows, rendering edge cases, hardware integrations, and codebases that still make sense after a year of changes.
+**Production Android engineer focused on systems that stay maintainable after launch.** 
+Most of my work sits below the feature layer—building shared libraries, codegen workflows, modular architecture, and apps that must behave predictably in the real world. I enjoy the pieces other teams inherit later: reliable app foundations, rendering edge cases, and codebases that don't collapse under iteration.
 
 ---
 
-## At a glance
+### Engineering Focus
 
 <table>
   <tr>
-    <td valign="top" width="25%">
-      <strong>Production scope</strong><br/>
-      Android delivery across three production apps plus a shared backbone library in a food-tech environment.
+    <td valign="top" width="50%">
+      <strong>🏗️ Architecture & Scale</strong><br/>
+      I build beyond isolated feature tickets. I focus on modularization, typed contracts (like my KSP work), and maintainable UI/state patterns across shared libraries and multiple production apps.
     </td>
-    <td valign="top" width="25%">
-      <strong>Indie shipping</strong><br/>
-      Personal Play Store apps published since college, including utility and media products used at scale.
+    <td valign="top" width="50%">
+      <strong>⚙️ The Hard Integrations</strong><br/>
+      I work comfortably in implementation-heavy areas where documentation is thin, such as BLE hardware flows, custom Canvas rendering, media playback, and annotation-driven tooling.
     </td>
-    <td valign="top" width="25%">
-      <strong>Technical depth</strong><br/>
-      KSP codegen, Compose Multiplatform, BLE hardware flows, bitmap rendering, and hard-to-document integration work.
+  </tr>
+  <tr>
+    <td valign="top" width="50%">
+      <strong>🚀 Independent Shipping</strong><br/>
+      I treat personal projects with production rigor. My published Play Store apps scale well and provide a sandbox for custom measurement experiences and memory-conscious view models.
     </td>
-    <td valign="top" width="25%">
-      <strong>Public footprint</strong><br/>
-      Open-source libraries, AI coding skills, articles, and a steady stream of visible engineering output.
+    <td valign="top" width="50%">
+      <strong>📚 Public Learning</strong><br/>
+      Code is best when shared. I maintain a steady stream of visible engineering output through open-source libraries, AI coding skills, and published articles on Android internals.
     </td>
   </tr>
 </table>
 
-> Building now: `Pushman` and a Compose UI library project. Work in progress, not presented as launched.
-
-<p align="center">
-  <img src="./assets/focus-map.svg" alt="Meet Miyani focus areas" width="100%" />
-</p>
+> *Currently iterating on `Pushman` and exploring deep Compose UI patterns.*
+<p align="center"><img src="./assets/focus-map.svg" alt="Meet Miyani focus areas" width="100%" /></p>
 
 ---
 
-## Professional impact
+### Tech Stack & Capabilities
 
-- Own production Android work that spans three apps and a shared library layer rather than isolated feature tickets.
-- Push architecture toward code that scales for the next engineer: modularization, typed contracts, maintainable UI/state patterns, and delivery workflows that do not collapse under iteration.
-- Work comfortably in implementation-heavy areas where documentation is thin: BLE devices, custom drawing, receipt rendering, media playback, and annotation-driven tooling.
-- Contribute beyond shipping features through internal technical ownership, public writing, and open-source projects that reflect how I build.
+- **Build:** `Kotlin` `Java` `Jetpack Compose` `Compose Multiplatform` `Coroutines` `Flow` `Media3` `WorkManager` `Paging 3`
+- **Architect:** `MVVM` `MVI` `Clean Architecture` `Modularization` `Shared Libraries` `KSP` `Navigation` `DataStore` `Room`
+- **Ship:** `CI/CD` `GitHub Actions` `Firebase` `BLE` `Canvas` `Custom Rendering` `Offline Media` `Maps` `Play Store Publishing`
 
 ---
 
-## Shipped
+### Code & Shipping
 
 <!-- dynamic-selected-work:start -->
 <table>
@@ -86,7 +83,22 @@ Most of the interesting work for me sits below the feature layer. I like the pie
 
 ---
 
-## Live signals
+### Writing & Articles
+
+<!-- dynamic-public-footprint:start -->
+- [Medium](https://meet-miyani.medium.com/) · `4` stories published. Latest: [AI Skill for Compose &amp; Compose Multiplatform](https://meet-miyani.medium.com/ai-skill-for-compose-compose-multiplatform-5fb2e56368ae?source=rss-8f91a9c1967f------2).
+- [Bugfender](https://bugfender.com/author/meet-miyani/) · 3 Kotlin articles that extend the public engineering footprint beyond repo code alone.
+- [Stack Overflow](https://stackoverflow.com/users/20559937/meet-miyani) · `99` reputation and `6` bronze badges.
+- [Play Store developer page](https://play.google.com/store/apps/dev?id=7045442356661226869) · `606K+` aggregate installs across `4` public apps.
+<!-- dynamic-public-footprint:end -->
+
+---
+
+### Status & Live Signals
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Meet-Miyani&bg_color=transparent&color=4E7A9E&line=1E88E5&point=39D98A&area=true&area_color=1E88E520&hide_border=true" alt="GitHub activity" />
+</p>
 
 <!-- dynamic-live-metrics:start -->
 <table>
@@ -103,42 +115,5 @@ Most of the interesting work for me sits below the feature layer. I like the pie
 <!-- dynamic-live-metrics:end -->
 
 ---
-
-## Capabilities
-
-**Build**
-
-`Kotlin` `Java` `Jetpack Compose` `Compose Multiplatform` `Coroutines` `Flow` `Media3` `WorkManager` `Paging 3`
-
-**Architect**
-
-`MVVM` `MVI` `Clean Architecture` `Modularization` `Shared Libraries` `KSP` `Navigation` `DataStore` `Room`
-
-**Ship**
-
-`Play Store Publishing` `CI/CD` `GitHub Actions` `Firebase` `BLE` `Canvas` `Custom Rendering` `Offline Media` `Maps`
-
----
-
-## Writing
-
-<!-- dynamic-public-footprint:start -->
-- [Medium](https://meet-miyani.medium.com/) · `4` stories published. Latest: [AI Skill for Compose &amp; Compose Multiplatform](https://meet-miyani.medium.com/ai-skill-for-compose-compose-multiplatform-5fb2e56368ae?source=rss-8f91a9c1967f------2).
-- [Bugfender](https://bugfender.com/author/meet-miyani/) · 3 Kotlin articles that extend the public engineering footprint beyond repo code alone.
-- [Stack Overflow](https://stackoverflow.com/users/20559937/meet-miyani) · `99` reputation and `6` bronze badges.
-- [Play Store developer page](https://play.google.com/store/apps/dev?id=7045442356661226869) · `606K+` aggregate installs across `4` public apps.
-<!-- dynamic-public-footprint:end -->
-
----
-
-## Signals
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Meet-Miyani&bg_color=transparent&color=4E7A9E&line=1E88E5&point=39D98A&area=true&area_color=1E88E520&hide_border=true" alt="GitHub activity" />
-</p>
-
----
-
-## Connect
 
 [miyanimeet02@gmail.com](mailto:miyanimeet02@gmail.com) · [LinkedIn](https://www.linkedin.com/in/meet-miyani-34204121b/) · [Medium](https://meet-miyani.medium.com/)
