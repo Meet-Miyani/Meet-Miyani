@@ -122,13 +122,13 @@
   <!-- Card: Stars -->
   <rect x="970" y="146" width="228" height="116" rx="16" fill="url(#cardBg)" stroke="#1A3A5B"/>
   <rect x="992" y="164" width="38" height="4" rx="2" fill="#48A8FF"/>
-  <text x="992" y="202" fill="#F3FAFF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="38" font-weight="700">155</text>
+  <text x="992" y="202" fill="#F3FAFF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="38" font-weight="700">159</text>
   <text x="992" y="228" fill="#5B83A7" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14">Repo stars</text>
 
   <!-- Card: Play Store installs -->
   <rect x="722" y="280" width="228" height="116" rx="16" fill="url(#cardBg)" stroke="#1A3A5B"/>
   <rect x="744" y="298" width="38" height="4" rx="2" fill="#F5A623"/>
-  <text x="744" y="336" fill="#F3FAFF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="38" font-weight="700">606K+</text>
+  <text x="744" y="336" fill="#F3FAFF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="38" font-weight="700">1.1M+</text>
   <text x="744" y="362" fill="#5B83A7" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14">Play Store installs</text>
 
   <!-- Card: Medium stories -->
@@ -144,5 +144,5 @@
   <text x="744" y="488" fill="#5B83A7" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13">Public repositories</text>
 
   <!-- Panel footer -->
-  <text x="722" y="544" fill="#3D6080" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="12">Updated Apr 14, 2026  ·  Auto-refreshed via GitHub Actions</text>
+  <text x="722" y="544" fill="#3D6080" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="12">Updated Apr 15, 2026  ·  Auto-refreshed via GitHub Actions</text>
 </svg>
