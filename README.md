@@ -59,7 +59,7 @@ Most of my work sits below the feature layer—building shared libraries, codege
 <table>
   <tr>
     <td valign="top" width="50%">
-      <strong><a href="https://github.com/Meet-Miyani/compose-skill">compose-skill</a></strong> · <code>154 ★</code><br/><br/>
+      <strong><a href="https://github.com/Meet-Miyani/compose-skill">compose-skill</a></strong> · <code>161 ★</code><br/><br/>
       Public reference skill for AI coding agents working in Jetpack Compose and Compose Multiplatform. It packages architecture, state, navigation, performance, testing, and cross-platform patterns into something other developers can actually reuse.
     </td>
     <td valign="top" width="50%">
@@ -103,15 +103,15 @@ Most of my work sits below the feature layer—building shared libraries, codege
 <!-- dynamic-live-metrics:start -->
 <table>
   <tr>
-    <td align="center" width="16.6%"><strong>12</strong><br/><sub>GitHub followers</sub></td>
-    <td align="center" width="16.6%"><strong>159</strong><br/><sub>Repo stars</sub></td>
+    <td align="center" width="16.6%"><strong>13</strong><br/><sub>GitHub followers</sub></td>
+    <td align="center" width="16.6%"><strong>166</strong><br/><sub>Repo stars</sub></td>
     <td align="center" width="16.6%"><strong>5</strong><br/><sub>Public repos</sub></td>
     <td align="center" width="16.6%"><strong>99</strong><br/><sub>Stack Overflow rep</sub></td>
     <td align="center" width="16.6%"><strong>4</strong><br/><sub>Medium stories</sub></td>
     <td align="center" width="16.6%"><strong>1.1M+</strong><br/><sub>Play Store installs</sub></td>
   </tr>
 </table>
-<p align="center"><sub>Refreshed Apr 15, 2026 UTC · auto-updated daily via GitHub Actions</sub></p>
+<p align="center"><sub>Refreshed Apr 16, 2026 UTC · auto-updated daily via GitHub Actions</sub></p>
 <!-- dynamic-live-metrics:end -->
 
 ---
