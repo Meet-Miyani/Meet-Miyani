@@ -59,7 +59,7 @@ Most of my work sits below the feature layer—building shared libraries, codege
 <table>
   <tr>
     <td valign="top" width="50%">
-      <strong><a href="https://github.com/Meet-Miyani/compose-skill">compose-skill</a></strong> · <code>170 ★</code><br/><br/>
+      <strong><a href="https://github.com/Meet-Miyani/compose-skill">compose-skill</a></strong> · <code>175 ★</code><br/><br/>
       Public reference skill for AI coding agents working in Jetpack Compose and Compose Multiplatform. It packages architecture, state, navigation, performance, testing, and cross-platform patterns into something other developers can actually reuse.
     </td>
     <td valign="top" width="50%">
@@ -69,7 +69,7 @@ Most of my work sits below the feature layer—building shared libraries, codege
   </tr>
   <tr>
     <td valign="top" width="50%">
-      <strong><a href="https://play.google.com/store/apps/details?id=avinya.tech.ringfit">RingFit</a></strong> · <code>1M+ installs</code><br/><br/>
+      <strong><a href="https://play.google.com/store/apps/details?id=avinya.tech.ringfit">RingFit</a></strong> · <code>500K+ installs</code><br/><br/>
       Consumer Android app with a custom measurement experience and canvas-based interaction model. Built and shipped independently, then proven in the market.
     </td>
     <td valign="top" width="50%">
@@ -78,7 +78,7 @@ Most of my work sits below the feature layer—building shared libraries, codege
     </td>
   </tr>
 </table>
-<p><sub>Also on Play Store: <a href="https://play.google.com/store/apps/details?id=avinya.tech.qrcode">QR Code Generator</a> (<code>1K+</code>) · <a href="https://play.google.com/store/apps/details?id=avinya.tech.cricscore">CricScore</a> (<code>10K+</code>)</sub></p>
+<p><sub>Also on Play Store: <a href="https://play.google.com/store/apps/details?id=avinya.tech.qrcode">QR Code Generator</a> (<code>1K+</code>) · <a href="https://play.google.com/store/apps/details?id=avinya.tech.cricscore">CricScore</a> (<code>5K+</code>)</sub></p>
 <!-- dynamic-selected-work:end -->
 
 ---
@@ -89,7 +89,7 @@ Most of my work sits below the feature layer—building shared libraries, codege
 - [Medium](https://meet-miyani.medium.com/) · `4` stories published. Latest: [AI Skill for Compose &amp; Compose Multiplatform](https://meet-miyani.medium.com/ai-skill-for-compose-compose-multiplatform-5fb2e56368ae?source=rss-8f91a9c1967f------2).
 - [Bugfender](https://bugfender.com/author/meet-miyani/) · 3 Kotlin articles that extend the public engineering footprint beyond repo code alone.
 - [Stack Overflow](https://stackoverflow.com/users/20559937/meet-miyani) · `99` reputation and `6` bronze badges.
-- [Play Store developer page](https://play.google.com/store/apps/dev?id=7045442356661226869) · `1.1M+` aggregate installs across `4` public apps.
+- [Play Store developer page](https://play.google.com/store/apps/dev?id=7045442356661226869) · `606K+` aggregate installs across `4` public apps.
 <!-- dynamic-public-footprint:end -->
 
 ---
@@ -104,14 +104,14 @@ Most of my work sits below the feature layer—building shared libraries, codege
 <table>
   <tr>
     <td align="center" width="16.6%"><strong>15</strong><br/><sub>GitHub followers</sub></td>
-    <td align="center" width="16.6%"><strong>175</strong><br/><sub>Repo stars</sub></td>
+    <td align="center" width="16.6%"><strong>180</strong><br/><sub>Repo stars</sub></td>
     <td align="center" width="16.6%"><strong>5</strong><br/><sub>Public repos</sub></td>
     <td align="center" width="16.6%"><strong>99</strong><br/><sub>Stack Overflow rep</sub></td>
     <td align="center" width="16.6%"><strong>4</strong><br/><sub>Medium stories</sub></td>
-    <td align="center" width="16.6%"><strong>1.1M+</strong><br/><sub>Play Store installs</sub></td>
+    <td align="center" width="16.6%"><strong>606K+</strong><br/><sub>Play Store installs</sub></td>
   </tr>
 </table>
-<p align="center"><sub>Refreshed Apr 17, 2026 UTC · auto-updated daily via GitHub Actions</sub></p>
+<p align="center"><sub>Refreshed Apr 18, 2026 UTC · auto-updated daily via GitHub Actions</sub></p>
 <!-- dynamic-live-metrics:end -->
 
 ---
