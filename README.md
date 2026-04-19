@@ -111,7 +111,7 @@ Most of my work sits below the feature layer—building shared libraries, codege
     <td align="center" width="16.6%"><strong>606K+</strong><br/><sub>Play Store installs</sub></td>
   </tr>
 </table>
-<p align="center"><sub>Refreshed Apr 18, 2026 UTC · auto-updated daily via GitHub Actions</sub></p>
+<p align="center"><sub>Refreshed Apr 19, 2026 UTC · auto-updated daily via GitHub Actions</sub></p>
 <!-- dynamic-live-metrics:end -->
 
 ---
