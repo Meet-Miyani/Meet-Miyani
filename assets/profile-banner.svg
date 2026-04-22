@@ -122,7 +122,7 @@
   <!-- Card: Stars -->
   <rect x="970" y="146" width="228" height="116" rx="16" fill="url(#cardBg)" stroke="#1A3A5B"/>
   <rect x="992" y="164" width="38" height="4" rx="2" fill="#48A8FF"/>
-  <text x="992" y="202" fill="#F3FAFF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="38" font-weight="700">183</text>
+  <text x="992" y="202" fill="#F3FAFF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="38" font-weight="700">184</text>
   <text x="992" y="228" fill="#5B83A7" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14">Repo stars</text>
 
   <!-- Card: Play Store installs -->
@@ -134,7 +134,7 @@
   <!-- Card: Medium stories -->
   <rect x="970" y="280" width="228" height="116" rx="16" fill="url(#cardBg)" stroke="#1A3A5B"/>
   <rect x="992" y="298" width="38" height="4" rx="2" fill="#9B8FFF"/>
-  <text x="992" y="336" fill="#F3FAFF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="38" font-weight="700">4</text>
+  <text x="992" y="336" fill="#F3FAFF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="38" font-weight="700">5</text>
   <text x="992" y="362" fill="#5B83A7" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14">Medium stories</text>
 
   <!-- Card: Public repos (wide) -->
