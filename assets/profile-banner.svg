@@ -116,7 +116,7 @@
   <!-- Card: Followers -->
   <rect x="722" y="146" width="228" height="116" rx="16" fill="url(#cardBg)" stroke="#1A3A5B"/>
   <rect x="744" y="164" width="38" height="4" rx="2" fill="#2EE6A6"/>
-  <text x="744" y="202" fill="#F3FAFF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="38" font-weight="700">16</text>
+  <text x="744" y="202" fill="#F3FAFF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="38" font-weight="700">17</text>
   <text x="744" y="228" fill="#5B83A7" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="14">GitHub followers</text>
 
   <!-- Card: Stars -->
@@ -144,5 +144,5 @@
   <text x="744" y="488" fill="#5B83A7" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13">Public repositories</text>
 
   <!-- Panel footer -->
-  <text x="722" y="544" fill="#3D6080" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="12">Updated May 04, 2026  ·  Auto-refreshed via GitHub Actions</text>
+  <text x="722" y="544" fill="#3D6080" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="12">Updated May 05, 2026  ·  Auto-refreshed via GitHub Actions</text>
 </svg>
