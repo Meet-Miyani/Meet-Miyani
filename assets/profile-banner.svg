@@ -140,9 +140,9 @@
   <!-- Card: Public repos (wide) -->
   <rect x="722" y="414" width="476" height="86" rx="16" fill="url(#cardBg)" stroke="#1A3A5B"/>
   <rect x="744" y="432" width="38" height="4" rx="2" fill="#58C4DC"/>
-  <text x="744" y="466" fill="#F3FAFF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="32" font-weight="700">6</text>
+  <text x="744" y="466" fill="#F3FAFF" font-family="'Segoe UI','SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="32" font-weight="700">7</text>
   <text x="744" y="488" fill="#5B83A7" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="13">Public repositories</text>
 
   <!-- Panel footer -->
-  <text x="722" y="544" fill="#3D6080" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="12">Updated Jul 25, 2026  ·  Auto-refreshed via GitHub Actions</text>
+  <text x="722" y="544" fill="#3D6080" font-family="'Segoe UI','SF Pro Text','Helvetica Neue',Arial,sans-serif" font-size="12">Updated Jul 26, 2026  ·  Auto-refreshed via GitHub Actions</text>
 </svg>
