@@ -103,7 +103,7 @@ Most of my work sits below the feature layer—building shared libraries, codege
 <!-- dynamic-live-metrics:start -->
 <table>
   <tr>
-    <td align="center" width="16.6%"><strong>19</strong><br/><sub>GitHub followers</sub></td>
+    <td align="center" width="16.6%"><strong>18</strong><br/><sub>GitHub followers</sub></td>
     <td align="center" width="16.6%"><strong>280</strong><br/><sub>Repo stars</sub></td>
     <td align="center" width="16.6%"><strong>7</strong><br/><sub>Public repos</sub></td>
     <td align="center" width="16.6%"><strong>99</strong><br/><sub>Stack Overflow rep</sub></td>
@@ -111,7 +111,7 @@ Most of my work sits below the feature layer—building shared libraries, codege
     <td align="center" width="16.6%"><strong>606K+</strong><br/><sub>Play Store installs</sub></td>
   </tr>
 </table>
-<p align="center"><sub>Refreshed Jul 27, 2026 UTC · auto-updated daily via GitHub Actions</sub></p>
+<p align="center"><sub>Refreshed Jul 28, 2026 UTC · auto-updated daily via GitHub Actions</sub></p>
 <!-- dynamic-live-metrics:end -->
 
 ---
