@@ -86,7 +86,7 @@ Most of my work sits below the feature layer—building shared libraries, codege
 ### Writing & Articles
 
 <!-- dynamic-public-footprint:start -->
-- [Medium](https://meet-miyani.medium.com/) · `7` stories published. Latest: [Stop Shipping Broken AI Agent Skills: Try the Free Online Skill Validator](https://meet-miyani.medium.com/stop-shipping-broken-ai-agent-skills-try-the-free-online-skill-validator-077c973fa9bc?source=rss-8f91a9c1967f------2).
+- [Medium](https://meet-miyani.medium.com/) · `9` stories published. Latest: [How to Add AdMob to a Compose Multiplatform App on Android and iOS](https://meet-miyani.medium.com/admob-compose-multiplatform-android-ios-guide-a46a8be696a7?source=rss-8f91a9c1967f------2).
 - [Bugfender](https://bugfender.com/author/meet-miyani/) · 3 Kotlin articles that extend the public engineering footprint beyond repo code alone.
 - [Stack Overflow](https://stackoverflow.com/users/20559937/meet-miyani) · `99` reputation and `6` bronze badges.
 - [Play Store developer page](https://play.google.com/store/apps/dev?id=7045442356661226869) · `606K+` aggregate installs across `4` public apps.
@@ -107,11 +107,11 @@ Most of my work sits below the feature layer—building shared libraries, codege
     <td align="center" width="16.6%"><strong>283</strong><br/><sub>Repo stars</sub></td>
     <td align="center" width="16.6%"><strong>7</strong><br/><sub>Public repos</sub></td>
     <td align="center" width="16.6%"><strong>99</strong><br/><sub>Stack Overflow rep</sub></td>
-    <td align="center" width="16.6%"><strong>7</strong><br/><sub>Medium stories</sub></td>
+    <td align="center" width="16.6%"><strong>9</strong><br/><sub>Medium stories</sub></td>
     <td align="center" width="16.6%"><strong>606K+</strong><br/><sub>Play Store installs</sub></td>
   </tr>
 </table>
-<p align="center"><sub>Refreshed Aug 12, 2026 UTC · auto-updated daily via GitHub Actions</sub></p>
+<p align="center"><sub>Refreshed Aug 13, 2026 UTC · auto-updated daily via GitHub Actions</sub></p>
 <!-- dynamic-live-metrics:end -->
 
 ---
