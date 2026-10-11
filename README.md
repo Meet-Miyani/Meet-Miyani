@@ -105,13 +105,13 @@ Most of my work sits below the feature layer—building shared libraries, codege
   <tr>
     <td align="center" width="16.6%"><strong>22</strong><br/><sub>GitHub followers</sub></td>
     <td align="center" width="16.6%"><strong>339</strong><br/><sub>Repo stars</sub></td>
-    <td align="center" width="16.6%"><strong>9</strong><br/><sub>Public repos</sub></td>
+    <td align="center" width="16.6%"><strong>8</strong><br/><sub>Public repos</sub></td>
     <td align="center" width="16.6%"><strong>99</strong><br/><sub>Stack Overflow rep</sub></td>
     <td align="center" width="16.6%"><strong>9</strong><br/><sub>Medium stories</sub></td>
     <td align="center" width="16.6%"><strong>606K+</strong><br/><sub>Play Store installs</sub></td>
   </tr>
 </table>
-<p align="center"><sub>Refreshed Oct 10, 2026 UTC · auto-updated daily via GitHub Actions</sub></p>
+<p align="center"><sub>Refreshed Oct 11, 2026 UTC · auto-updated daily via GitHub Actions</sub></p>
 <!-- dynamic-live-metrics:end -->
 
 ---
