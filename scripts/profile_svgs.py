@@ -151,68 +151,84 @@ def _label(x: float, y: float, text: str, t: dict, anchor: str = "start") -> str
     )
 
 
-def build_blueprint(t: dict) -> str:
-    """How I build: typed contracts → KSP → shared library → production apps."""
-    H = 300
-    cy = 160
-    node = f'stroke="{t["subtle"]}" stroke-width="1.25"'
-    code = [("@Event", t["subtle"]), ("data class Purchase(", t["fg"]), ("  val sku: String,", t["muted"]),
-            ("  val total: Money,", t["muted"]), (")", t["fg"])]
-    code_svg = "".join(
-        f'<text class="mono" x="18" y="{cy - 36 + i * 19}" font-size="12.5" fill="{c}" xml:space="preserve">{esc(s)}</text>'
-        for i, (s, c) in enumerate(code)
-    )
-    modules = ["analytics events", "payload parsers", "ui components"]
-    mod_svg = "".join(
-        f'<rect x="488" y="{cy - 55 + i * 40}" width="164" height="30" rx="6" stroke="{t["line"]}"/>'
-        f'<text class="mono" x="502" y="{cy - 35 + i * 40}" font-size="12.5" fill="{t["muted"]}">{m}</text>'
-        for i, m in enumerate(modules)
-    )
-    apps = [("User app", "new checkout", -62), ("Driver app", "−90% OOM", 0), ("Partner app", "CMP PoC", 62)]
-    app_svg = "".join(
-        f'<g class="in" {d(1.0 + i * .1)}>'
-        f'<rect class="arrive" x="770" y="{cy + dy - 22}" width="190" height="44" rx="8" stroke="{t["subtle"]}" stroke-width="1.25"/>'
-        f'<text x="788" y="{cy + dy + 5}" font-size="15" font-weight="600" fill="{t["fg"]}">{name}</text>'
-        f'<text class="mono" x="946" y="{cy + dy + 4}" text-anchor="end" font-size="11.5" fill="{t["accent"] if i == 1 else t["muted"]}">{note}</text></g>'
-        for i, (name, note, dy) in enumerate(apps)
-    )
-    wire = f'stroke="{t["line"]}" stroke-width="1.25" pathLength="1" stroke-dasharray="1"'
-    dot = f'r="3" fill="{t["accent"]}" opacity="0"'
-    css = f"""
-.wire {{ animation: wire 1s {EASE} both; }} @keyframes wire {{ from {{ stroke-dashoffset: 1; }} }}
-.spin {{ transform-box: fill-box; transform-origin: center; animation: spin 24s linear infinite; }} @keyframes spin {{ to {{ transform: rotate(360deg); }} }}
-.p1 {{ animation: p1 6s linear 1.6s infinite; }} .p2 {{ animation: p2 6s linear 1.6s infinite; }}
-.p3a {{ animation: p3a 6s linear 1.6s infinite; }} .p3b {{ animation: p3b 6s linear 1.6s infinite; }} .p3c {{ animation: p3c 6s linear 1.6s infinite; }}
-@keyframes p1 {{ 0% {{ opacity: 0; transform: translateX(0); }} 2% {{ opacity: 1; }} 20% {{ opacity: 1; transform: translateX(94px); }} 22%, 100% {{ opacity: 0; transform: translateX(94px); }} }}
-@keyframes p2 {{ 0%, 30% {{ opacity: 0; transform: translateX(0); }} 32% {{ opacity: 1; }} 50% {{ opacity: 1; transform: translateX(100px); }} 52%, 100% {{ opacity: 0; transform: translateX(100px); }} }}
-@keyframes p3b {{ 0%, 60% {{ opacity: 0; transform: translate(0,0); }} 62% {{ opacity: 1; }} 84% {{ opacity: 1; transform: translate(100px,0); }} 86%, 100% {{ opacity: 0; transform: translate(100px,0); }} }}
-@keyframes p3a {{ 0%, 60% {{ opacity: 0; transform: translate(0,0); }} 62% {{ opacity: 1; }} 68% {{ transform: translate(50px,0); }} 78% {{ transform: translate(50px,-62px); }} 84% {{ opacity: 1; transform: translate(100px,-62px); }} 86%, 100% {{ opacity: 0; transform: translate(100px,-62px); }} }}
-@keyframes p3c {{ 0%, 60% {{ opacity: 0; transform: translate(0,0); }} 62% {{ opacity: 1; }} 68% {{ transform: translate(50px,0); }} 78% {{ transform: translate(50px,62px); }} 84% {{ opacity: 1; transform: translate(100px,62px); }} 86%, 100% {{ opacity: 0; transform: translate(100px,62px); }} }}
-.arrive {{ animation: arrive 6s linear 1.6s infinite; }} @keyframes arrive {{ 0%, 82%, 100% {{ stroke: {t['subtle']}; }} 86%, 92% {{ stroke: {t['accent']}; }} }}
-"""
-    body = f"""
-{_label(0, 62, "01  TYPED CONTRACTS", t)}{_label(330, 62, "02  CODEGEN", t, "middle")}{_label(470, 62, "03  SHARED LIBRARY", t)}{_label(770, 62, "04  PRODUCTION APPS", t)}
+# Compose Kit v6 test: rubric items passed out of 39, without the kit vs with v6.1.
+# Source: compose-skill/evals-v2/results-v6 (score-output.txt, ADDONS.md).
+KIT_RESULTS = [
+    ("Gemini 3.8 Flash", 22, 34, False),
+    ("GPT-6-Luna", 28, 37, False),
+    ("DeepSeek V4.1 Flash", 32, 38, True),
+    ("DeepSeek V4 Pro", 29, 34, True),
+    ("GPT-6-Sol", 30, 34, False),
+    ("Sonnet 5.5", 31, 34, False),
+    ("Muse Spark 1.3", 27, 29, False),
+]
+KIT_ITEMS = 39
 
-<g class="in" {d(.1)}><rect x=".6" y="{cy - 60}" width="196" height="120" rx="10" {node}/>{code_svg}</g>
-<path class="wire" {d(.5)} d="M197 {cy} H290" {wire}/>
-<g class="in" {d(.4)}>
-  <circle cx="330" cy="{cy}" r="38" {node}/>
-  <circle class="spin" cx="330" cy="{cy}" r="46" stroke="{t['line']}" stroke-width="1.25" stroke-dasharray="3 7"/>
-  <text class="mono" x="330" y="{cy + 5}" text-anchor="middle" font-size="15" font-weight="600" fill="{t['fg']}">KSP</text>
+
+def build_kit(data: dict, t: dict) -> str:
+    """Compose Kit, with its measured lift per model as a dumbbell chart (one hue, two shades)."""
+    kit = data["kit"]
+    row, top = 33, 96
+    H = top + row * len(KIT_RESULTS) + 62
+    x0, x1, lo, hi = 560, 868, 50, 100
+    sx = lambda v: x0 + (v - lo) / (hi - lo) * (x1 - x0)  # noqa: E731
+    bottom = top + row * len(KIT_RESULTS) - 12
+
+    grid = "".join(
+        f'<rect x="{sx(v) - .5}" y="{top - 22}" width="1" height="{bottom - top + 28}" fill="{t["line"]}"/>'
+        f'<text class="mono" x="{sx(v)}" y="{bottom + 28}" text-anchor="middle" font-size="11" fill="{t["subtle"]}">{v}%</text>'
+        for v in (50, 75, 100)
+    )
+    rows, css = [], []
+    for i, (model, before, after, addon) in enumerate(KIT_RESULTS):
+        y = top + i * row
+        b, a = 100 * before / KIT_ITEMS, 100 * after / KIT_ITEMS
+        xb, xa = sx(b), sx(a)
+        delay = .35 + i * .09
+        css.append(f"@keyframes go{i} {{ from {{ transform: translateX({xb - xa:.1f}px); }} }} .go{i} {{ animation: go{i} 1.1s {EASE} {delay:.2f}s both; }}")
+        rows.append(f"""
+<g class="in" {d(delay - .2)}>
+  <text x="{x0 - 22}" y="{y + 5}" text-anchor="end" font-size="14.5" fill="{t['fg']}">{esc(model)}{'<tspan fill="' + t['subtle'] + '"> †</tspan>' if addon else ''}</text>
+  <circle cx="{xb:.1f}" cy="{y}" r="4.5" stroke="{t['muted']}" stroke-width="1.5"/>
 </g>
-<path class="wire" {d(.8)} d="M376 {cy} H470" {wire}/>
-<g class="in" {d(.7)}><rect x="470" y="{cy - 74}" width="200" height="148" rx="10" {node}/>{mod_svg}</g>
-<path class="wire" {d(1.1)} d="M670 {cy} H770" {wire}/>
-<path class="wire" {d(1.1)} d="M720 {cy} V{cy - 62} H770" {wire}/>
-<path class="wire" {d(1.1)} d="M720 {cy} V{cy + 62} H770" {wire}/>
-{app_svg}
+<rect class="draw" {d(delay)} x="{xb + 6:.1f}" y="{y - 1}" width="{max(xa - xb - 12, 0):.1f}" height="2" rx="1" fill="{t['subtle']}"/>
+<circle class="go{i}" cx="{xa:.1f}" cy="{y}" r="5.5" fill="{t['fg']}"/>
+<text class="mono in" {d(delay + .8)} x="{W}" y="{y + 4.5}" text-anchor="end" font-size="12.5" fill="{t['fg']}">+{a - b:.1f}</text>""")
 
-<circle class="p1" cx="197" cy="{cy}" {dot}/><circle class="p2" cx="373" cy="{cy}" {dot}/>
-<circle class="p3a" cx="670" cy="{cy}" {dot}/><circle class="p3b" cx="670" cy="{cy}" {dot}/><circle class="p3c" cx="670" cy="{cy}" {dot}/>
+    facts = [("126", "agentic runs in real agent CLIs"), ("2", "blind graders must agree on every item"), ("7", "models tested, none scored lower with the kit")]
+    fact_svg = "".join(
+        f'<g class="in" {d(.5 + k * .1)}><rect x="0" y="{222 + k * 40}" width="318" height="1" fill="{t["line"]}"/>'
+        f'<text class="mono num" x="0" y="{248 + k * 40}" font-size="14" font-weight="600" fill="{t["fg"]}">{n}</text>'
+        f'<text x="44" y="{248 + k * 40}" font-size="14" fill="{t["muted"]}">{esc(label)}</text></g>'
+        for k, (n, label) in enumerate(facts)
+    )
+    lx = x0
+    body = f"""
+{_label(0, 34, "FLAGSHIP  ·  OPEN SOURCE", t)}
+<text class="in" {d(.05)} x="-2" y="88" font-size="44" font-weight="600" letter-spacing="-1.2" fill="{t['fg']}">Compose Kit</text>
+<text class="in" {d(.15)} x="0" y="124" font-size="16" fill="{t['muted']}">Seven agent skills that make AI coding agents</text>
+<text class="in" {d(.15)} x="0" y="146" font-size="16" fill="{t['muted']}">write better Jetpack Compose and KMP code.</text>
+<text class="mono in" {d(.25)} x="0" y="184" font-size="12.5" fill="{t['muted']}">v{esc(kit['version'])}  ·  {kit['stars']} ★  ·  MIT</text>
+{fact_svg}
 
-<text class="mono in" {d(1.4)} x="0" y="{H - 14}" font-size="12" fill="{t['subtle']}">one source of truth  →  generated, type-safe code  →  one library  →  three apps</text>
+{_label(lx, 34, "RUBRIC ITEMS PASSED  ·  % OF 39  ·  V6 TEST", t)}
+<g class="in" {d(.2)}>
+  <circle cx="{lx + 5}" cy="58" r="4.5" stroke="{t['muted']}" stroke-width="1.5"/>
+  <text x="{lx + 17}" y="62.5" font-size="12.5" fill="{t['muted']}">without the kit</text>
+  <circle cx="{lx + 126}" cy="58" r="5.5" fill="{t['fg']}"/>
+  <text x="{lx + 139}" y="62.5" font-size="12.5" fill="{t['muted']}">with Compose Kit v6.1</text>
+  <text class="mono" x="{W}" y="62" text-anchor="end" font-size="11" letter-spacing="1.2" fill="{t['subtle']}">LIFT, PTS</text>
+</g>
+{grid}
+{''.join(rows)}
+<text class="in" {d(1.4)} x="{W}" y="{H - 6}" text-anchor="end" font-size="11.5" fill="{t['subtle']}">† add-on models, graded by a different pair of graders</text>
 """
-    return doc(H, body, "How I build: typed contracts go through KSP code generation into one shared library that powers three production Android apps (User, Driver, Partner).", css)
+    title = (
+        f"Compose Kit: seven agent skills for Jetpack Compose and Compose Multiplatform. v6 test, percent of {KIT_ITEMS} rubric "
+        "items passed without the kit and with v6.1: "
+        + "; ".join(f"{m} {100 * b / KIT_ITEMS:.1f}% to {100 * a / KIT_ITEMS:.1f}%" for m, b, a, _ in KIT_RESULTS) + "."
+    )
+    return doc(H, body, title, " ".join(css))
 
 
 def build_shipped(apps: list[dict], t: dict) -> str:
