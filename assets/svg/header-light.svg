@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="176" viewBox="0 0 960 176" fill="none" role="img" aria-label="Meet Miyani — Senior Android Developer"><title>Meet Miyani — Senior Android Developer</title><style>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="152" viewBox="0 0 960 152" fill="none" role="img" aria-label="Meet Miyani — Senior Android Developer"><title>Meet Miyani — Senior Android Developer</title><style>
 text { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif; }
 .num { font-variant-numeric: tabular-nums; }
 .mono { font-family: ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace; }
@@ -20,8 +20,6 @@ text { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helv
   <text x="942" y="63" text-anchor="end" font-size="15" fill="#1F2328">Open to remote roles</text>
 </g>
 
-<rect class="draw" style="animation-delay:0.30s" x="0" y="128" width="960" height="1" fill="#D1D9E0"/>
-
-<text class="mono in" style="animation-delay:0.50s" x="0" y="160" font-size="13" letter-spacing=".2" fill="#59636E">Kotlin · Jetpack Compose · Compose Multiplatform · KSP</text>
-<text class="mono in" style="animation-delay:0.58s" x="960" y="160" text-anchor="end" font-size="13" letter-spacing=".2" fill="#59636E">Android @ Haat Delivery</text>
+<text class="mono in" style="animation-delay:0.40s" x="0" y="140" font-size="13" letter-spacing=".2" fill="#59636E">Kotlin · Jetpack Compose · Compose Multiplatform · KSP</text>
+<text class="mono in" style="animation-delay:0.48s" x="960" y="140" text-anchor="end" font-size="13" letter-spacing=".2" fill="#59636E">Android @ Haat Delivery</text>
 </svg>

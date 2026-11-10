@@ -2,6 +2,10 @@
 """Minimal, typographic SVGs for the GitHub profile README.
 
 Principles
+- Graphics only: anything a visitor or a search engine should be able to read
+  (name, prose, project list, links) lives in the README as real text. SVG is
+  used for the identity header, the figures strip and the timeline diagram, and
+  each one carries descriptive alt text.
 - Native: GitHub's own system font stacks and Primer colour tokens, transparent
   backgrounds, light + dark variants (served via <picture>), so the graphics
   read as part of the page rather than pasted-on banners.
@@ -72,12 +76,10 @@ def build_header(data: dict, t: dict) -> str:
   <text x="{W - 18}" y="63" text-anchor="end" font-size="15" fill="{t['fg']}">{esc(p['availability'])}</text>
 </g>
 
-<rect class="draw" {d(.3)} x="0" y="128" width="{W}" height="1" fill="{t['line']}"/>
-
-<text class="mono in" {d(.5)} x="0" y="160" font-size="13" letter-spacing=".2" fill="{t['muted']}">{esc(' · '.join(p['keywords']))}</text>
-<text class="mono in" {d(.58)} x="{W}" y="160" text-anchor="end" font-size="13" letter-spacing=".2" fill="{t['muted']}">{esc(p['now'])}</text>
+<text class="mono in" {d(.4)} x="0" y="140" font-size="13" letter-spacing=".2" fill="{t['muted']}">{esc(' · '.join(p['keywords']))}</text>
+<text class="mono in" {d(.48)} x="{W}" y="140" text-anchor="end" font-size="13" letter-spacing=".2" fill="{t['muted']}">{esc(p['now'])}</text>
 """
-    return doc(176, body, f"{p['name']} — {p['role']}")
+    return doc(152, body, f"{p['name']} — {p['role']}")
 
 
 # ───────────────────────── figures ─────────────────────────
@@ -101,27 +103,6 @@ def build_figures(data: dict, t: dict) -> str:
     css = f".rise {{ animation: rise .9s {EASE} both; }} @keyframes rise {{ from {{ transform: translateY(58px); }} }}"
     title = "; ".join(f"{v} {label.replace(chr(10), ' ')}" for v, label in figures)
     return doc(118, "".join(parts), title, css)
-
-
-# ───────────────────────── work rows ─────────────────────────
-
-def build_work_row(item: dict, index: int, t: dict, *, last: bool = False) -> str:
-    h = 76 if last else 75
-    delay = index * .08
-    bottom = (
-        f'<rect class="draw" {d(delay + .2)} x="0" y="{h - 1}" width="{W}" height="1" fill="{t["line"]}"/>' if last else ""
-    )
-    body = f"""
-<rect class="draw" {d(delay)} x="0" y="0" width="{W}" height="1" fill="{t['line']}"/>
-<g class="in" {d(delay + .15)}>
-  <text class="mono" x="0" y="44" font-size="13" fill="{t['subtle']}">{index + 1:02d}</text>
-  <text x="44" y="45" font-size="18" font-weight="600" fill="{t['fg']}">{esc(item['name'])}</text>
-  <text x="224" y="45" font-size="16" fill="{t['muted']}">{esc(item['desc'])}</text>
-  <text class="mono" x="{W - 30}" y="44" text-anchor="end" font-size="13" fill="{t['muted']}">{esc(item['meta'])}</text>
-  <text x="{W}" y="45" text-anchor="end" font-size="16" fill="{t['subtle']}">↗</text>
-</g>
-{bottom}"""
-    return doc(h, body, f"{item['name']} — {item['desc']} ({item['meta']})")
 
 
 # ───────────────────────── experience ─────────────────────────

@@ -192,18 +192,32 @@ EXPERIENCE = [
 
 def work_items(data: dict) -> list[dict]:
     gh = data["github"]
-    installs = {a["name"]: a["installs"] for a in data["play"]["apps"]}
-    eventics = f"{gh['eventics_stars']} ★" if gh.get("eventics_stars") else "library"
+    by_name = {a["name"]: a for a in data["play"]["apps"]}
+    eventics = f"{gh['eventics_stars']} ★" if gh.get("eventics_stars") else ""
+    play = lambda name: f"{by_name[name]['installs']} installs"  # noqa: E731
     return [
-        {"slug": "compose-skill", "name": "compose-skill", "desc": "AI agent skill for Jetpack Compose and KMP",
-         "meta": f"{gh['compose_skill_stars']} ★", "url": "https://github.com/Meet-Miyani/compose-skill"},
-        {"slug": "eventics", "name": "Eventics", "desc": "KSP codegen: typed events to analytics payloads",
-         "meta": eventics, "url": "https://github.com/Meet-Miyani/Eventics"},
-        {"slug": "ringfit", "name": "RingFit", "desc": "Ring sizing with a custom ruler and Canvas UX",
-         "meta": f"{installs['RingFit']} installs", "url": PLAY_APPS[0]["url"]},
-        {"slug": "viewtube", "name": "ViewTube", "desc": "Video player: offline, subtitles, Shorts-style feed",
-         "meta": f"{installs['ViewTube']} installs", "url": PLAY_APPS[1]["url"]},
+        {"name": "compose-skill", "url": "https://github.com/Meet-Miyani/compose-skill", "meta": f"{gh['compose_skill_stars']} ★",
+         "desc": "An AI agent skill for Jetpack Compose and Compose Multiplatform. It covers MVI, Navigation 3, "
+                 "Koin and Hilt, Ktor, Room, Paging 3, performance, accessibility and testing."},
+        {"name": "Eventics", "url": "https://github.com/Meet-Miyani/Eventics", "meta": eventics,
+         "desc": "An Android event-logging library. KSP turns typed event classes into generated analytics payload code."},
+        {"name": "RingFit", "url": by_name["RingFit"]["url"], "meta": play("RingFit"),
+         "desc": "A ring-size measurement app for Android with a custom ruler built on Canvas."},
+        {"name": "ViewTube", "url": by_name["ViewTube"]["url"], "meta": play("ViewTube"),
+         "desc": "An Android video player built on VLC, with offline playback, subtitles and a memory-efficient Shorts-style feed."},
+        {"name": "QR Code Generator", "url": by_name["QR Code Generator"]["url"], "meta": play("QR Code Generator"),
+         "desc": "Customizable QR codes drawn on Canvas: colors, eyes, patterns and gradients."},
+        {"name": "CricScore", "url": by_name["CricScore"]["url"], "meta": play("CricScore"),
+         "desc": "Live cricket scores, series and scorecards with MotionLayout animations and Paging 3."},
     ]
+
+
+def render_work(data: dict) -> str:
+    rows = []
+    for item in work_items(data):
+        meta = f" `{item['meta']}`" if item["meta"] else ""
+        rows.append(f"- **[{item['name']}]({item['url']})**{meta}<br>{item['desc']}")
+    return "\n".join(rows)
 
 
 def figures(data: dict) -> list[tuple[str, str]]:
@@ -219,7 +233,6 @@ def write_assets(data: dict) -> list[Path]:
     out = ASSETS / "svg"
     out.mkdir(parents=True, exist_ok=True)
     data = {**data, "profile": PROFILE, "experience": EXPERIENCE, "figures": figures(data)}
-    items = work_items(data)
     written = []
     for theme, tokens in kit.THEMES.items():
         files = {
@@ -227,8 +240,6 @@ def write_assets(data: dict) -> list[Path]:
             "figures": kit.build_figures(data, tokens),
             "experience": kit.build_experience(data, tokens),
         }
-        for i, item in enumerate(items):
-            files[f"work-{item['slug']}"] = kit.build_work_row(item, i, tokens, last=i == len(items) - 1)
         for name, svg in files.items():
             path = out / f"{name}-{theme}.svg"
             path.write_text(svg, encoding="utf-8")
@@ -260,16 +271,10 @@ def render_writing(data: dict) -> str:
     return "\n".join(rows)
 
 
-def render_more_apps(data: dict) -> str:
-    extra = [a for a in data["play"]["apps"] if a["name"] not in ("RingFit", "ViewTube")]
-    links = " · ".join(f'<a href="{a["url"]}">{html.escape(a["name"])}</a> {a["installs"]}' for a in extra)
-    return f"<sub>Also on Google Play: {links}</sub>"
-
-
 def refresh_readme(data: dict) -> None:
     readme = README_PATH.read_text(encoding="utf-8")
     readme = replace_marker_block(readme, "dynamic-writing", render_writing(data))
-    readme = replace_marker_block(readme, "dynamic-more-apps", render_more_apps(data))
+    readme = replace_marker_block(readme, "dynamic-work", render_work(data))
     readme = replace_marker_block(readme, "dynamic-updated", f"<sub>Numbers refresh daily · last run {data['updated']}</sub>")
     README_PATH.write_text(readme, encoding="utf-8")
 
