@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="248" viewBox="0 0 960 248" fill="none" role="img" aria-label="Experience: Haat Delivery, Android Developer, remote (Israel) (2023 — now); Freelance, Android Developer (2022 — 2023); Vasundhara Infotech, Android Developer, Surat (2021 — 2022)"><title>Experience: Haat Delivery, Android Developer, remote (Israel) (2023 — now); Freelance, Android Developer (2022 — 2023); Vasundhara Infotech, Android Developer, Surat (2021 — 2022)</title><style>
+text { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif; }
+.num { font-variant-numeric: tabular-nums; }
+.mono { font-family: ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace; }
+.in { animation: in .7s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes in { from { opacity: 0; transform: translateY(6px); } }
+.draw { transform-box: fill-box; transform-origin: left; animation: draw 1.1s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes draw { from { transform: scaleX(0); } }
+.breathe { transform-box: fill-box; transform-origin: center; animation: breathe 3.2s ease-in-out infinite; opacity: 0; }
+@keyframes breathe { 0%, 100% { opacity: 0; transform: scale(1); } 50% { opacity: .35; transform: scale(2.4); } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+.down { transform-box: fill-box; transform-origin: top; animation: down 1.2s cubic-bezier(.2,.7,.2,1) both; } @keyframes down { from { transform: scaleY(0); } }</style><rect class="down" style="animation-delay:0.10s" x="157.5" y="22" width="1" height="178" fill="#D1D9E0"/>
+<g class="in" style="animation-delay:0.15s">
+  <text class="mono" x="0" y="27" font-size="13" fill="#818B98">2023 — now</text>
+  <circle class="breathe" cx="158" cy="22" r="4.5" fill="#1A7F37"/><circle cx="158" cy="22" r="4.5" fill="#1A7F37"/>
+  <text x="184" y="28" font-size="17" font-weight="600" fill="#1F2328">Haat Delivery<tspan font-weight="400" fill="#59636E">  ·  Android Developer, remote (Israel)</tspan></text>
+  <text x="184" y="54" font-size="15" fill="#59636E">Now building a Compose Multiplatform app at Haat.</text><text x="184" y="76" font-size="15" fill="#59636E">Earlier: one shared library across 3 apps, and ~90% fewer OOM crashes in the Driver app.</text>
+</g>
+<g class="in" style="animation-delay:0.27s">
+  <text class="mono" x="0" y="127" font-size="13" fill="#818B98">2022 — 2023</text>
+  <circle cx="158" cy="122" r="4" fill="#818B98"/>
+  <text x="184" y="128" font-size="17" font-weight="600" fill="#1F2328">Freelance<tspan font-weight="400" fill="#59636E">  ·  Android Developer</tspan></text>
+  <text x="184" y="154" font-size="15" fill="#59636E">BLE/IoT and medical-device integrations, media apps — 10+ client projects end to end.</text>
+</g>
+<g class="in" style="animation-delay:0.39s">
+  <text class="mono" x="0" y="205" font-size="13" fill="#818B98">2021 — 2022</text>
+  <circle cx="158" cy="200" r="4" fill="#818B98"/>
+  <text x="184" y="206" font-size="17" font-weight="600" fill="#1F2328">Vasundhara Infotech<tspan font-weight="400" fill="#59636E">  ·  Android Developer, Surat</tspan></text>
+  <text x="184" y="232" font-size="15" fill="#59636E">R&amp;D on Canvas, GLSL shaders and on-device ML for creative and video-editing apps.</text>
+</g></svg>

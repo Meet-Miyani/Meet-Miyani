@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="389" viewBox="0 0 960 389" fill="none" role="img" aria-label="Compose Kit: seven agent skills for Jetpack Compose and Compose Multiplatform. v6 test, percent of 39 rubric items passed without the kit and with v6.1: Gemini 3.8 Flash 56.4% to 87.2%; GPT-6-Luna 71.8% to 94.9%; DeepSeek V4.1 Flash 82.1% to 97.4%; DeepSeek V4 Pro 74.4% to 87.2%; GPT-6-Sol 76.9% to 87.2%; Sonnet 5.5 79.5% to 87.2%; Muse Spark 1.3 69.2% to 74.4%."><title>Compose Kit: seven agent skills for Jetpack Compose and Compose Multiplatform. v6 test, percent of 39 rubric items passed without the kit and with v6.1: Gemini 3.8 Flash 56.4% to 87.2%; GPT-6-Luna 71.8% to 94.9%; DeepSeek V4.1 Flash 82.1% to 97.4%; DeepSeek V4 Pro 74.4% to 87.2%; GPT-6-Sol 76.9% to 87.2%; Sonnet 5.5 79.5% to 87.2%; Muse Spark 1.3 69.2% to 74.4%.</title><style>
+text { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif; }
+.num { font-variant-numeric: tabular-nums; }
+.mono { font-family: ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace; }
+.in { animation: in .7s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes in { from { opacity: 0; transform: translateY(6px); } }
+.draw { transform-box: fill-box; transform-origin: left; animation: draw 1.1s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes draw { from { transform: scaleX(0); } }
+.breathe { transform-box: fill-box; transform-origin: center; animation: breathe 3.2s ease-in-out infinite; opacity: 0; }
+@keyframes breathe { 0%, 100% { opacity: 0; transform: scale(1); } 50% { opacity: .35; transform: scale(2.4); } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+@keyframes go0 { from { transform: translateX(-189.5px); } } .go0 { animation: go0 1.1s cubic-bezier(.2,.7,.2,1) 0.35s both; } @keyframes go1 { from { transform: translateX(-142.2px); } } .go1 { animation: go1 1.1s cubic-bezier(.2,.7,.2,1) 0.44s both; } @keyframes go2 { from { transform: translateX(-94.8px); } } .go2 { animation: go2 1.1s cubic-bezier(.2,.7,.2,1) 0.53s both; } @keyframes go3 { from { transform: translateX(-79.0px); } } .go3 { animation: go3 1.1s cubic-bezier(.2,.7,.2,1) 0.62s both; } @keyframes go4 { from { transform: translateX(-63.2px); } } .go4 { animation: go4 1.1s cubic-bezier(.2,.7,.2,1) 0.71s both; } @keyframes go5 { from { transform: translateX(-47.4px); } } .go5 { animation: go5 1.1s cubic-bezier(.2,.7,.2,1) 0.80s both; } @keyframes go6 { from { transform: translateX(-31.6px); } } .go6 { animation: go6 1.1s cubic-bezier(.2,.7,.2,1) 0.89s both; }</style>
+<text class="mono" x="0" y="34" text-anchor="start" font-size="11" letter-spacing="1.2" fill="#818B98">FLAGSHIP  ·  OPEN SOURCE</text>
+<text class="in" style="animation-delay:0.05s" x="-2" y="88" font-size="44" font-weight="600" letter-spacing="-1.2" fill="#1F2328">Compose Kit</text>
+<text class="in" style="animation-delay:0.15s" x="0" y="124" font-size="16" fill="#59636E">Seven agent skills that make AI coding agents</text>
+<text class="in" style="animation-delay:0.15s" x="0" y="146" font-size="16" fill="#59636E">write better Jetpack Compose and KMP code.</text>
+<text class="mono in" style="animation-delay:0.25s" x="0" y="184" font-size="12.5" fill="#59636E">v6.3.0  ·  305 ★  ·  MIT</text>
+<g class="in" style="animation-delay:0.50s"><rect x="0" y="222" width="318" height="1" fill="#D1D9E0"/><text class="mono num" x="0" y="248" font-size="14" font-weight="600" fill="#1F2328">126</text><text x="44" y="248" font-size="14" fill="#59636E">agentic runs in real agent CLIs</text></g><g class="in" style="animation-delay:0.60s"><rect x="0" y="262" width="318" height="1" fill="#D1D9E0"/><text class="mono num" x="0" y="288" font-size="14" font-weight="600" fill="#1F2328">2</text><text x="44" y="288" font-size="14" fill="#59636E">blind graders must agree on every item</text></g><g class="in" style="animation-delay:0.70s"><rect x="0" y="302" width="318" height="1" fill="#D1D9E0"/><text class="mono num" x="0" y="328" font-size="14" font-weight="600" fill="#1F2328">7</text><text x="44" y="328" font-size="14" fill="#59636E">models tested, none scored lower with the kit</text></g>
+
+<text class="mono" x="560" y="34" text-anchor="start" font-size="11" letter-spacing="1.2" fill="#818B98">RUBRIC ITEMS PASSED  ·  % OF 39  ·  V6 TEST</text>
+<g class="in" style="animation-delay:0.20s">
+  <circle cx="565" cy="58" r="4.5" stroke="#59636E" stroke-width="1.5"/>
+  <text x="577" y="62.5" font-size="12.5" fill="#59636E">without the kit</text>
+  <circle cx="686" cy="58" r="5.5" fill="#1F2328"/>
+  <text x="699" y="62.5" font-size="12.5" fill="#59636E">with Compose Kit v6.1</text>
+  <text class="mono" x="960" y="62" text-anchor="end" font-size="11" letter-spacing="1.2" fill="#818B98">LIFT, PTS</text>
+</g>
+<rect x="559.5" y="74" width="1" height="247" fill="#D1D9E0"/><text class="mono" x="560.0" y="343" text-anchor="middle" font-size="11" fill="#818B98">50%</text><rect x="713.5" y="74" width="1" height="247" fill="#D1D9E0"/><text class="mono" x="714.0" y="343" text-anchor="middle" font-size="11" fill="#818B98">75%</text><rect x="867.5" y="74" width="1" height="247" fill="#D1D9E0"/><text class="mono" x="868.0" y="343" text-anchor="middle" font-size="11" fill="#818B98">100%</text>
+
+<g class="in" style="animation-delay:0.15s">
+  <text x="538" y="101" text-anchor="end" font-size="14.5" fill="#1F2328">Gemini 3.8 Flash</text>
+  <circle cx="599.5" cy="96" r="4.5" stroke="#59636E" stroke-width="1.5"/>
+</g>
+<rect class="draw" style="animation-delay:0.35s" x="605.5" y="95" width="177.5" height="2" rx="1" fill="#818B98"/>
+<circle class="go0" cx="789.0" cy="96" r="5.5" fill="#1F2328"/>
+<text class="mono in" style="animation-delay:1.15s" x="960" y="100.5" text-anchor="end" font-size="12.5" fill="#1F2328">+30.8</text>
+<g class="in" style="animation-delay:0.24s">
+  <text x="538" y="134" text-anchor="end" font-size="14.5" fill="#1F2328">GPT-6-Luna</text>
+  <circle cx="694.3" cy="129" r="4.5" stroke="#59636E" stroke-width="1.5"/>
+</g>
+<rect class="draw" style="animation-delay:0.44s" x="700.3" y="128" width="130.2" height="2" rx="1" fill="#818B98"/>
+<circle class="go1" cx="836.4" cy="129" r="5.5" fill="#1F2328"/>
+<text class="mono in" style="animation-delay:1.24s" x="960" y="133.5" text-anchor="end" font-size="12.5" fill="#1F2328">+23.1</text>
+<g class="in" style="animation-delay:0.33s">
+  <text x="538" y="167" text-anchor="end" font-size="14.5" fill="#1F2328">DeepSeek V4.1 Flash<tspan fill="#818B98"> †</tspan></text>
+  <circle cx="757.4" cy="162" r="4.5" stroke="#59636E" stroke-width="1.5"/>
+</g>
+<rect class="draw" style="animation-delay:0.53s" x="763.4" y="161" width="82.8" height="2" rx="1" fill="#818B98"/>
+<circle class="go2" cx="852.2" cy="162" r="5.5" fill="#1F2328"/>
+<text class="mono in" style="animation-delay:1.33s" x="960" y="166.5" text-anchor="end" font-size="12.5" fill="#1F2328">+15.4</text>
+<g class="in" style="animation-delay:0.42s">
+  <text x="538" y="200" text-anchor="end" font-size="14.5" fill="#1F2328">DeepSeek V4 Pro<tspan fill="#818B98"> †</tspan></text>
+  <circle cx="710.1" cy="195" r="4.5" stroke="#59636E" stroke-width="1.5"/>
+</g>
+<rect class="draw" style="animation-delay:0.62s" x="716.1" y="194" width="67.0" height="2" rx="1" fill="#818B98"/>
+<circle class="go3" cx="789.0" cy="195" r="5.5" fill="#1F2328"/>
+<text class="mono in" style="animation-delay:1.42s" x="960" y="199.5" text-anchor="end" font-size="12.5" fill="#1F2328">+12.8</text>
+<g class="in" style="animation-delay:0.51s">
+  <text x="538" y="233" text-anchor="end" font-size="14.5" fill="#1F2328">GPT-6-Sol</text>
+  <circle cx="725.8" cy="228" r="4.5" stroke="#59636E" stroke-width="1.5"/>
+</g>
+<rect class="draw" style="animation-delay:0.71s" x="731.8" y="227" width="51.2" height="2" rx="1" fill="#818B98"/>
+<circle class="go4" cx="789.0" cy="228" r="5.5" fill="#1F2328"/>
+<text class="mono in" style="animation-delay:1.51s" x="960" y="232.5" text-anchor="end" font-size="12.5" fill="#1F2328">+10.3</text>
+<g class="in" style="animation-delay:0.60s">
+  <text x="538" y="266" text-anchor="end" font-size="14.5" fill="#1F2328">Sonnet 5.5</text>
+  <circle cx="741.6" cy="261" r="4.5" stroke="#59636E" stroke-width="1.5"/>
+</g>
+<rect class="draw" style="animation-delay:0.80s" x="747.6" y="260" width="35.4" height="2" rx="1" fill="#818B98"/>
+<circle class="go5" cx="789.0" cy="261" r="5.5" fill="#1F2328"/>
+<text class="mono in" style="animation-delay:1.60s" x="960" y="265.5" text-anchor="end" font-size="12.5" fill="#1F2328">+7.7</text>
+<g class="in" style="animation-delay:0.69s">
+  <text x="538" y="299" text-anchor="end" font-size="14.5" fill="#1F2328">Muse Spark 1.3</text>
+  <circle cx="678.5" cy="294" r="4.5" stroke="#59636E" stroke-width="1.5"/>
+</g>
+<rect class="draw" style="animation-delay:0.89s" x="684.5" y="293" width="19.6" height="2" rx="1" fill="#818B98"/>
+<circle class="go6" cx="710.1" cy="294" r="5.5" fill="#1F2328"/>
+<text class="mono in" style="animation-delay:1.69s" x="960" y="298.5" text-anchor="end" font-size="12.5" fill="#1F2328">+5.1</text>
+<text class="in" style="animation-delay:1.40s" x="960" y="383" text-anchor="end" font-size="11.5" fill="#818B98">† add-on models, graded by a different pair of graders</text>
+</svg>
