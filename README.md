@@ -69,7 +69,10 @@ That habit produced [Compose Kit](https://github.com/Meet-Miyani/compose-skill),
 ## Writing
 
 <!-- dynamic-writing:start -->
-- [How to Add AdMob to a Compose Multiplatform App on Android and iOS](https://meet-miyani.medium.com/admob-compose-multiplatform-android-ios-guide-a46a8be696a7) · 2026
+- [How to Add AdMob to a Compose Multiplatform App on Android and iOS](https://meet-miyani.medium.com/admob-compose-multiplatform-android-ios-guide-a46a8be696a7) · Aug 2026
+- [I Couldn’t Find a Clean Way to Add AdMob to Compose Multiplatform, So I Built One](https://meet-miyani.medium.com/why-i-built-admob-cmp-compose-multiplatform-146fed8cc4ec) · Aug 2026
+- [Stop Shipping Broken AI Agent Skills: Try the Free Online Skill Validator](https://meet-miyani.medium.com/stop-shipping-broken-ai-agent-skills-try-the-free-online-skill-validator-077c973fa9bc) · May 2026
+- [React Native vs KMP vs Native: Cross-Platform Guide](https://meet-miyani.medium.com/react-native-vs-kmp-vs-native-cross-platform-guide-cae169592029) · Apr 2026
 
 <sub>9 stories on <a href="https://meet-miyani.medium.com/">Medium</a> · 3 Kotlin deep-dives on <a href="https://bugfender.com/author/meet-miyani/">Bugfender</a> · 99 rep on <a href="https://stackoverflow.com/users/20559937/meet-miyani">Stack Overflow</a></sub>
 <!-- dynamic-writing:end -->
