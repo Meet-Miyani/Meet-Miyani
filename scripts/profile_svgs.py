@@ -109,15 +109,16 @@ def build_figures(data: dict, t: dict) -> str:
 
 def build_experience(data: dict, t: dict) -> str:
     jobs = data["experience"]
-    row = 78
-    top = 22
-    h = top + row * len(jobs) - 18
-    lx = 158
+    top, lx = 22, 158
+    ys, y = [], top
+    for job in jobs:
+        ys.append(y)
+        y += 56 + 22 * len(job["note"].split("\n"))
+    h = y - 30
     parts = [
-        f'<rect class="down" {d(.1)} x="{lx - .5}" y="{top}" width="1" height="{row * (len(jobs) - 1)}" fill="{t["line"]}"/>'
+        f'<rect class="down" {d(.1)} x="{lx - .5}" y="{top}" width="1" height="{ys[-1] - top}" fill="{t["line"]}"/>'
     ]
-    for i, job in enumerate(jobs):
-        y = top + i * row
+    for i, (job, y) in enumerate(zip(jobs, ys)):
         if i == 0:
             dot = (
                 f'<circle class="breathe" cx="{lx}" cy="{y}" r="4.5" fill="{t["accent"]}"/>'
@@ -125,12 +126,16 @@ def build_experience(data: dict, t: dict) -> str:
             )
         else:
             dot = f'<circle cx="{lx}" cy="{y}" r="4" fill="{t["subtle"]}"/>'
+        notes = "".join(
+            f'<text x="{lx + 26}" y="{y + 32 + k * 22}" font-size="15" fill="{t["muted"]}">{esc(line)}</text>'
+            for k, line in enumerate(job["note"].split("\n"))
+        )
         parts.append(f"""
 <g class="in" {d(.15 + i * .12)}>
   <text class="mono" x="0" y="{y + 5}" font-size="13" fill="{t['subtle']}">{esc(job['when'])}</text>
   {dot}
   <text x="{lx + 26}" y="{y + 6}" font-size="17" font-weight="600" fill="{t['fg']}">{esc(job['org'])}<tspan font-weight="400" fill="{t['muted']}">  ·  {esc(job['title'])}</tspan></text>
-  <text x="{lx + 26}" y="{y + 32}" font-size="15" fill="{t['muted']}">{esc(job['note'])}</text>
+  {notes}
 </g>""")
     css = (
         f".down {{ transform-box: fill-box; transform-origin: top; animation: down 1.2s {EASE} both; }}"
@@ -335,41 +340,29 @@ def build_shipped(apps: list[dict], t: dict) -> str:
     return doc(H, body, title, full_css)
 
 
-def build_pulse(weeks: list[int], total: int, labels: list[tuple[int, str]], t: dict) -> str:
-    """One line: weekly contributions over the last year."""
-    H = 176
-    top, base = 40, 128
-    peak = max(weeks + [1])
-    n = len(weeks)
-    pts = [(i * W / (n - 1), base - (v / peak) * (base - top)) for i, v in enumerate(weeks)]
-    path = f"M{pts[0][0]:.1f} {pts[0][1]:.1f}"
-    for i in range(n - 1):
-        p0, p1, p2, p3 = pts[max(i - 1, 0)], pts[i], pts[i + 1], pts[min(i + 2, n - 1)]
-        c1 = (p1[0] + (p2[0] - p0[0]) / 6, min(base, p1[1] + (p2[1] - p0[1]) / 6))
-        c2 = (p2[0] - (p3[0] - p1[0]) / 6, min(base, p2[1] - (p3[1] - p1[1]) / 6))
-        path += f" C{c1[0]:.1f} {c1[1]:.1f} {c2[0]:.1f} {c2[1]:.1f} {p2[0]:.1f} {p2[1]:.1f}"
-    ex, ey = pts[-1]
-    months = "".join(
-        f'<text class="mono" x="{i * W / (n - 1):.0f}" y="{H - 8}" font-size="11" fill="{t["subtle"]}">{name}</text>'
-        for i, name in labels if i * W / (n - 1) < W - 40
-    )
-    css = f".sweep {{ transform-box: fill-box; transform-origin: left; animation: draw 2.4s {EASE} both; }} .late {{ animation-delay: 2.1s; }}"
+def build_ledger(rows: list[dict], t: dict) -> str:
+    """Solutions, not fixes: the recurring problem on the left, the tool built for it on the right."""
+    top, row = 78, 58
+    H = top + row * len(rows) - 10
+    px, lx0, lx1, sx = 424, 444, 536, 556
+    parts, css = [], []
+    for i, r in enumerate(rows):
+        y = top + i * row
+        delay = .15 + i * .28
+        css.append(f".pd{i} {{ animation: pd {1.1:.1f}s {EASE} {delay + .25:.2f}s both; }}")
+        parts.append(f"""
+<text class="in" {d(delay)} x="{px}" y="{y + 5}" text-anchor="end" font-size="15.5" fill="{t['muted']}">{esc(r['problem'])}</text>
+<rect class="draw" {d(delay + .25)} x="{lx0}" y="{y - .5}" width="{lx1 - lx0}" height="1" fill="{t['subtle']}"/>
+<circle class="pd{i}" cx="{lx1}" cy="{y}" r="3" fill="{t['accent']}"/>
+<g class="in" {d(delay + .7)}>
+  <text x="{sx}" y="{y + 6}" font-size="20" font-weight="600" letter-spacing="-.3" fill="{t['fg']}">{esc(r['name'])}</text>
+  <text class="mono" x="{W}" y="{y + 5}" text-anchor="end" font-size="12" fill="{t['muted']}">{esc(r['proof'])}</text>
+</g>
+<rect x="0" y="{y + row / 2 - .5}" width="{W}" height="1" fill="{t['line']}" opacity="{0 if i == len(rows) - 1 else .6}"/>""")
+    css.append(f"@keyframes pd {{ from {{ transform: translateX(-{lx1 - lx0}px); opacity: 0; }} 20% {{ opacity: 1; }} }}")
     body = f"""
-<defs>
-  <linearGradient id="pf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{t['fg']}" stop-opacity=".10"/><stop offset="1" stop-color="{t['fg']}" stop-opacity="0"/></linearGradient>
-  <clipPath id="pc"><rect class="sweep" x="0" y="0" width="{W}" height="{base + 2}"/></clipPath>
-</defs>
-<text class="mono in" x="0" y="14" font-size="12" fill="{t['muted']}">{total:,} contributions in the last 52 weeks</text>
-<text class="mono in" x="{W}" y="14" text-anchor="end" font-size="12" fill="{t['subtle']}">peak week: {peak}</text>
-<rect x="0" y="{base}" width="{W}" height="1" fill="{t['line']}"/>
-<g clip-path="url(#pc)">
-  <path d="{path} V{base} H0 Z" fill="url(#pf)"/>
-  <path d="{path}" stroke="{t['fg']}" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
-</g>
-<g class="in late">
-  <circle class="breathe" cx="{ex - 4:.1f}" cy="{ey:.1f}" r="4" fill="{t['accent']}"/>
-  <circle cx="{ex - 4:.1f}" cy="{ey:.1f}" r="4" fill="{t['accent']}"/>
-</g>
-{months}
+{_label(px, 34, "A PROBLEM THAT KEPT COMING BACK", t, "end")}{_label(sx, 34, "WHAT I BUILT FOR IT", t)}
+{''.join(parts)}
 """
-    return doc(H, body, f"{total:,} GitHub contributions in the last 52 weeks", css)
+    title = "Solutions, not fixes. " + " ".join(f"{r['problem']}: {r['name']} ({r['proof']})." for r in rows)
+    return doc(H, body, title, " ".join(css))

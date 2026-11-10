@@ -3,13 +3,13 @@
 <h1>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/svg/header-dark.svg">
-  <img src="./assets/svg/header-light.svg" alt="Meet Miyani — Senior Android Developer (Kotlin, Jetpack Compose, Compose Multiplatform, KSP) in Surat, India" width="100%">
+  <img src="./assets/svg/header-light.svg" alt="Meet Miyani — Senior Android and Compose Multiplatform Developer (Kotlin, Jetpack Compose, Android and iOS) in Surat, India" width="100%">
 </picture>
 </h1>
 
-I'm **Meet Miyani**, a senior Android developer based in Surat, India, working remotely. I build Android apps in **Kotlin** and **Jetpack Compose**, and the layer underneath them: shared libraries, KSP code generation, and architecture that still holds up a year after launch.
+I'm **Meet Miyani**, a senior Android and Compose Multiplatform developer based in Surat, India, working remotely. I build apps in **Kotlin** that ship to Android and iOS from one codebase, and I prefer solutions to fixes: when a problem keeps coming back, I build the tool that removes it and publish it.
 
-Five years across consumer, logistics, food-tech and media. Currently at Haat Delivery; before that, freelance BLE, IoT and medical-device work. I also design, build and ship my own apps on Google Play.
+That habit produced [Compose Kit](https://github.com/Meet-Miyani/compose-skill), agent skills that measurably improve how AI coding agents write Compose, and [AdMob CMP](https://github.com/Meet-Miyani/admob-compose-multiplatform), a Compose Multiplatform AdMob SDK on Maven Central. Five years across consumer, logistics, food-tech and media. Currently at Haat Delivery, building Haat Partner+ in Compose Multiplatform.
 
 [LinkedIn](https://www.linkedin.com/in/meet-miyani-34204121b/) · [Medium](https://meet-miyani.medium.com/) · [Google Play](https://play.google.com/store/apps/dev?id=7045442356661226869) · [Stack Overflow](https://stackoverflow.com/users/20559937/meet-miyani) · [Résumé](./assets/Meet_Miyani_Resume.pdf) · [miyanimeet02@gmail.com](mailto:miyanimeet02@gmail.com)
 
@@ -17,30 +17,37 @@ Five years across consumer, logistics, food-tech and media. Currently at Haat De
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/svg/figures-dark.svg">
-  <img src="./assets/svg/figures-light.svg" alt="606K+ installs across my Google Play apps. About 90% fewer out-of-memory crashes after the Driver-app rework. 3 production apps on one shared library I architect. 303 stars on compose-skill." width="100%">
+  <img src="./assets/svg/figures-light.svg" alt="606K+ installs across my Google Play apps. About 90% fewer out-of-memory crashes after the Haat Driver-app rework. 305 stars on Compose Kit. 2 platforms from one codebase: ViewTube on Android and iOS." width="100%">
 </picture>
 
-## Open source and apps
+## Solutions, not fixes
 
-<!-- dynamic-work:start -->
-- **[compose-skill](https://github.com/Meet-Miyani/compose-skill)** `303 ★`<br>An AI agent skill for Jetpack Compose and Compose Multiplatform. It covers MVI, Navigation 3, Koin and Hilt, Ktor, Room, Paging 3, performance, accessibility and testing.
+<!-- dynamic-oss:start -->
+- **[Compose Kit](https://github.com/Meet-Miyani/compose-skill)** `305 ★` · [compose.avinya.dev](https://compose.avinya.dev)<br>Seven agent skills that make Claude Code, Codex, Cursor, Copilot and Gemini write better Jetpack Compose and Compose Multiplatform code. Tested across 126 agentic runs on seven models, with two blind graders per item.
+- **[AdMob CMP](https://github.com/Meet-Miyani/admob-compose-multiplatform)** `35 ★` · [ads.avinya.dev](https://ads.avinya.dev)<br>A Compose Multiplatform AdMob SDK for Android and iOS. Banner, interstitial, rewarded, app-open and native ads from one `commonMain` API, with UMP consent built in. Published on Maven Central.
+- **[SkillLint](https://github.com/Meet-Miyani/agent-skill-validator)**<br>A validator for AI agent skills that runs entirely in the browser: structure, links, token budget and security checks.
 - **[Eventics](https://github.com/Meet-Miyani/Eventics)**<br>An Android event-logging library. KSP turns typed event classes into generated analytics payload code.
+<!-- dynamic-oss:end -->
+
+## Shipped apps
+
+<!-- dynamic-apps:start -->
+- **[ViewTube](https://play.google.com/store/apps/details?id=avinya.tech.yt)** `100K+ installs`<br>A video player for Android and iOS from one Kotlin codebase, built with Compose Multiplatform. Media3 on Android and AVPlayer on iOS sit behind a single Kotlin API. It runs on AdMob CMP and is built with Compose Kit.
 - **[RingFit](https://play.google.com/store/apps/details?id=avinya.tech.ringfit)** `500K+ installs`<br>A ring-size measurement app for Android with a custom ruler built on Canvas.
-- **[ViewTube](https://play.google.com/store/apps/details?id=avinya.tech.yt)** `100K+ installs`<br>An Android video player built on VLC, with offline playback, subtitles and a memory-efficient Shorts-style feed.
 - **[QR Code Generator](https://play.google.com/store/apps/details?id=avinya.tech.qrcode)** `1K+ installs`<br>Customizable QR codes drawn on Canvas: colors, eyes, patterns and gradients.
 - **[CricScore](https://play.google.com/store/apps/details?id=avinya.tech.cricscore)** `5K+ installs`<br>Live cricket scores, series and scorecards with MotionLayout animations and Paging 3.
-<!-- dynamic-work:end -->
+<!-- dynamic-apps:end -->
 
 ## Experience
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/svg/experience-dark.svg">
-  <img src="./assets/svg/experience-light.svg" alt="Haat Delivery, Android Developer, remote (Israel), 2023 to now: shared library across 3 apps, KSP frameworks, about 90% fewer OOM crashes in the Driver app. Freelance Android Developer, 2022 to 2023: BLE, IoT and medical-device integrations, media apps, 10+ client projects. Vasundhara Infotech, Android Developer, Surat, 2021 to 2022: R&D on Canvas, GLSL shaders and on-device ML." width="100%">
+  <img src="./assets/svg/experience-light.svg" alt="Haat Delivery, Android Developer, remote (Israel), 2023 to now: shared library across 3 apps, about 90% fewer OOM crashes, now building Haat Partner+ in Compose Multiplatform. Freelance Android Developer, 2022 to 2023: BLE, IoT and medical-device integrations, media apps, 10+ client projects. Vasundhara Infotech, Android Developer, Surat, 2021 to 2022: R&D on Canvas, GLSL shaders and on-device ML." width="100%">
 </picture>
 
 ## Stack
 
-**Kotlin** and **Java** · **Jetpack Compose**, Compose Multiplatform, custom Views and Canvas · Clean Architecture, MVVM / MVI, modularization · Coroutines and Flow · Hilt, Koin · Retrofit, Ktor · Room, Realm, DataStore · KSP, Gradle, GitHub Actions and Packages · Media3, BLE, Maps, Firebase
+**Kotlin** and **Java** · **Compose Multiplatform** and **Jetpack Compose** for Android and iOS, custom Views and Canvas · Clean Architecture, MVVM / MVI, modularization · Coroutines and Flow · Koin, Hilt · Navigation 3 · Retrofit, Ktor · Room, Realm, DataStore · KSP, Gradle, GitHub Actions and Packages · Media3, BLE, Maps, Firebase
 
 ## Writing
 

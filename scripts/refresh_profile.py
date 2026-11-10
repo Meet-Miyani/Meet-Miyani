@@ -43,8 +43,8 @@ for _app in PLAY_APPS:
 
 # Last-known values, used by --sample and as a per-source fallback if a fetch fails.
 FALLBACK = {
-    "github": {"followers": 22, "public_repos": 8, "total_stars": 345, "compose_skill_stars": 303,
-               "eventics_stars": 0, "languages": {"Kotlin": 6, "Java": 1, "Python": 1}},
+    "github": {"followers": 22, "public_repos": 8, "total_stars": 345, "compose_skill_stars": 305,
+               "eventics_stars": 0, "admob_cmp_stars": 35, "skilllint_stars": 1, "languages": {"Kotlin": 6, "Java": 1, "Python": 1}},
     "stackoverflow": {"reputation": 99, "bronze_badges": 6},
     "medium": {"story_count": 9, "items": [
         {"title": "How to Add AdMob to a Compose Multiplatform App on Android and iOS",
@@ -111,6 +111,8 @@ def fetch_github() -> dict:
         "total_stars": sum(int(r.get("stargazers_count", 0)) for r in by_name.values()),
         "compose_skill_stars": int(by_name.get("compose-skill", {}).get("stargazers_count", 0)),
         "eventics_stars": int(by_name.get("Eventics", {}).get("stargazers_count", 0)),
+        "admob_cmp_stars": int(by_name.get("admob-compose-multiplatform", {}).get("stargazers_count", 0)),
+        "skilllint_stars": int(by_name.get("agent-skill-validator", {}).get("stargazers_count", 0)),
         "languages": languages,
     }
 
@@ -173,59 +175,80 @@ def gather(sample: bool) -> dict:
 
 PROFILE = {
     "name": "Meet Miyani",
-    "role": "Senior Android Developer",
+    "role": "Senior Android & Compose Multiplatform Developer",
     "location": "Surat, India · UTC+5:30",
     "availability": "Open to remote roles",
-    "keywords": ["Kotlin", "Jetpack Compose", "Compose Multiplatform", "KSP"],
+    "keywords": ["Kotlin", "Compose Multiplatform", "Jetpack Compose", "Android + iOS"],
     "now": "Android @ Haat Delivery",
 }
 
 EXPERIENCE = [
     {"when": "2023 — now", "org": "Haat Delivery", "title": "Android Developer, remote (Israel)",
-     "note": "Shared library across 3 apps, KSP frameworks, ~90% fewer OOM crashes in the Driver app."},
+     "note": "Now building Haat Partner+ in Compose Multiplatform.\nEarlier: one shared library across 3 apps, and ~90% fewer OOM crashes in the Driver app."},
     {"when": "2022 — 2023", "org": "Freelance", "title": "Android Developer",
      "note": "BLE/IoT and medical-device integrations, media apps — 10+ client projects end to end."},
     {"when": "2021 — 2022", "org": "Vasundhara Infotech", "title": "Android Developer, Surat",
      "note": "R&D on Canvas, GLSL shaders and on-device ML for creative and video-editing apps."},
 ]
 
+GH = "https://github.com/Meet-Miyani"
 
-def work_items(data: dict) -> list[dict]:
+
+def stars(n: int) -> str:
+    return f"{n} ★" if n >= 5 else ""
+
+
+def oss_items(data: dict) -> list[dict]:
+    """Open source, framed the way it was built: a recurring problem, then the tool that removes it."""
     gh = data["github"]
+    return [
+        {"name": "Compose Kit", "url": f"{GH}/compose-skill", "meta": stars(gh["compose_skill_stars"]),
+         "site": ("compose.avinya.dev", "https://compose.avinya.dev"),
+         "desc": "Seven agent skills that make Claude Code, Codex, Cursor, Copilot and Gemini write better Jetpack Compose "
+                 "and Compose Multiplatform code. Tested across 126 agentic runs on seven models, with two blind graders per item."},
+        {"name": "AdMob CMP", "url": f"{GH}/admob-compose-multiplatform", "meta": stars(gh.get("admob_cmp_stars", 0)),
+         "site": ("ads.avinya.dev", "https://ads.avinya.dev"),
+         "desc": "A Compose Multiplatform AdMob SDK for Android and iOS. Banner, interstitial, rewarded, app-open and native ads "
+                 "from one `commonMain` API, with UMP consent built in. Published on Maven Central."},
+        {"name": "SkillLint", "url": f"{GH}/agent-skill-validator", "meta": stars(gh.get("skilllint_stars", 0)), "site": None,
+         "desc": "A validator for AI agent skills that runs entirely in the browser: structure, links, token budget and security checks."},
+        {"name": "Eventics", "url": f"{GH}/Eventics", "meta": stars(gh.get("eventics_stars", 0)), "site": None,
+         "desc": "An Android event-logging library. KSP turns typed event classes into generated analytics payload code."},
+    ]
+
+
+def app_items(data: dict) -> list[dict]:
     by_name = {a["name"]: a for a in data["play"]["apps"]}
-    eventics = f"{gh['eventics_stars']} ★" if gh.get("eventics_stars") else ""
     play = lambda name: f"{by_name[name]['installs']} installs"  # noqa: E731
     return [
-        {"name": "compose-skill", "url": "https://github.com/Meet-Miyani/compose-skill", "meta": f"{gh['compose_skill_stars']} ★",
-         "desc": "An AI agent skill for Jetpack Compose and Compose Multiplatform. It covers MVI, Navigation 3, "
-                 "Koin and Hilt, Ktor, Room, Paging 3, performance, accessibility and testing."},
-        {"name": "Eventics", "url": "https://github.com/Meet-Miyani/Eventics", "meta": eventics,
-         "desc": "An Android event-logging library. KSP turns typed event classes into generated analytics payload code."},
-        {"name": "RingFit", "url": by_name["RingFit"]["url"], "meta": play("RingFit"),
+        {"name": "ViewTube", "url": by_name["ViewTube"]["url"], "meta": play("ViewTube"), "short": "Android and iOS from one Kotlin codebase.",
+         "desc": "A video player for Android and iOS from one Kotlin codebase, built with Compose Multiplatform. Media3 on Android "
+                 "and AVPlayer on iOS sit behind a single Kotlin API. It runs on AdMob CMP and is built with Compose Kit."},
+        {"name": "RingFit", "url": by_name["RingFit"]["url"], "meta": play("RingFit"), "short": "Ring sizing with a custom ruler built on Canvas.",
          "desc": "A ring-size measurement app for Android with a custom ruler built on Canvas."},
-        {"name": "ViewTube", "url": by_name["ViewTube"]["url"], "meta": play("ViewTube"),
-         "desc": "An Android video player built on VLC, with offline playback, subtitles and a memory-efficient Shorts-style feed."},
         {"name": "QR Code Generator", "url": by_name["QR Code Generator"]["url"], "meta": play("QR Code Generator"),
+         "short": "Customizable QR codes: colors, eyes, patterns, gradients.",
          "desc": "Customizable QR codes drawn on Canvas: colors, eyes, patterns and gradients."},
-        {"name": "CricScore", "url": by_name["CricScore"]["url"], "meta": play("CricScore"),
+        {"name": "CricScore", "url": by_name["CricScore"]["url"], "meta": play("CricScore"), "short": "Live cricket scores, series and scorecards.",
          "desc": "Live cricket scores, series and scorecards with MotionLayout animations and Paging 3."},
     ]
 
 
-def render_work(data: dict) -> str:
+def render_list(items: list[dict]) -> str:
     rows = []
-    for item in work_items(data):
+    for item in items:
         meta = f" `{item['meta']}`" if item["meta"] else ""
-        rows.append(f"- **[{item['name']}]({item['url']})**{meta}<br>{item['desc']}")
+        site = f" · [{item['site'][0]}]({item['site'][1]})" if item.get("site") else ""
+        rows.append(f"- **[{item['name']}]({item['url']})**{meta}{site}<br>{item['desc']}")
     return "\n".join(rows)
 
 
 def figures(data: dict) -> list[tuple[str, str]]:
     return [
         (data["play"]["total_installs_display"], "installs across\nmy Play Store apps"),
-        ("~90%", "fewer OOM crashes\nafter the Driver-app rework"),
-        ("3", "production apps on one\nshared library I architect"),
-        (f"{data['github']['compose_skill_stars']}", "stars on compose-skill,\nmy AI agent skill"),
+        ("~90%", "fewer OOM crashes after\nthe Haat Driver-app rework"),
+        (f"{data['github']['compose_skill_stars']}", "stars on Compose Kit,\nmy agent skills for Compose"),
+        ("2", "platforms from one codebase:\nViewTube on Android and iOS"),
     ]
 
 
@@ -274,7 +297,8 @@ def render_writing(data: dict) -> str:
 def refresh_readme(data: dict) -> None:
     readme = README_PATH.read_text(encoding="utf-8")
     readme = replace_marker_block(readme, "dynamic-writing", render_writing(data))
-    readme = replace_marker_block(readme, "dynamic-work", render_work(data))
+    readme = replace_marker_block(readme, "dynamic-oss", render_list(oss_items(data)))
+    readme = replace_marker_block(readme, "dynamic-apps", render_list(app_items(data)))
     readme = replace_marker_block(readme, "dynamic-updated", f"<sub>Numbers refresh daily · last run {data['updated']}</sub>")
     README_PATH.write_text(readme, encoding="utf-8")
 
