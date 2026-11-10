@@ -31,6 +31,8 @@ ASSETS = ROOT / "assets"
 GITHUB_USERNAME = "Meet-Miyani"
 STACKOVERFLOW_USER_ID = "20559937"
 MEDIUM_FEED_URL = "https://meet-miyani.medium.com/feed"
+KIT_PLUGIN_URL = "https://raw.githubusercontent.com/Meet-Miyani/compose-skill/HEAD/.claude-plugin/plugin.json"
+VIEWTUBE_APP_STORE_URL = "https://apps.apple.com/us/app/viewtube-offline-video-player/id6814320903"
 
 PLAY_APPS = [
     {"name": "RingFit", "package": "avinya.tech.ringfit"},
@@ -45,6 +47,7 @@ for _app in PLAY_APPS:
 FALLBACK = {
     "github": {"followers": 22, "public_repos": 8, "total_stars": 345, "compose_skill_stars": 305,
                "eventics_stars": 0, "admob_cmp_stars": 35, "skilllint_stars": 1, "languages": {"Kotlin": 6, "Java": 1, "Python": 1}},
+    "kit": {"version": "6.3.0"},
     "stackoverflow": {"reputation": 99, "bronze_badges": 6},
     "medium": {"story_count": 9, "items": [
         {"title": "How to Add AdMob to a Compose Multiplatform App on Android and iOS",
@@ -117,6 +120,10 @@ def fetch_github() -> dict:
     }
 
 
+def fetch_kit() -> dict:
+    return {"version": str(fetch_json(KIT_PLUGIN_URL)["version"])}
+
+
 def fetch_stackoverflow() -> dict:
     payload = fetch_json(f"https://api.stackexchange.com/2.3/users/{STACKOVERFLOW_USER_ID}?site=stackoverflow")
     user = payload["items"][0]
@@ -153,7 +160,7 @@ def gather(sample: bool) -> dict:
     data: dict = {}
     sources = {
         "github": fetch_github, "stackoverflow": fetch_stackoverflow,
-        "medium": fetch_medium, "play": fetch_play,
+        "medium": fetch_medium, "play": fetch_play, "kit": fetch_kit,
     }
     for key, fn in sources.items():
         if sample:
@@ -184,7 +191,7 @@ PROFILE = {
 
 EXPERIENCE = [
     {"when": "2023 — now", "org": "Haat Delivery", "title": "Android Developer, remote (Israel)",
-     "note": "Now building Haat Partner+ in Compose Multiplatform.\nEarlier: one shared library across 3 apps, and ~90% fewer OOM crashes in the Driver app."},
+     "note": "Now building a Compose Multiplatform app at Haat.\nEarlier: one shared library across 3 apps, and ~90% fewer OOM crashes in the Driver app."},
     {"when": "2022 — 2023", "org": "Freelance", "title": "Android Developer",
      "note": "BLE/IoT and medical-device integrations, media apps — 10+ client projects end to end."},
     {"when": "2021 — 2022", "org": "Vasundhara Infotech", "title": "Android Developer, Surat",
@@ -221,7 +228,8 @@ def app_items(data: dict) -> list[dict]:
     by_name = {a["name"]: a for a in data["play"]["apps"]}
     play = lambda name: f"{by_name[name]['installs']} installs"  # noqa: E731
     return [
-        {"name": "ViewTube", "url": by_name["ViewTube"]["url"], "meta": play("ViewTube"), "short": "Android and iOS from one Kotlin codebase.",
+        {"name": "ViewTube", "url": by_name["ViewTube"]["url"], "meta": play("ViewTube"), "site": ("App Store", VIEWTUBE_APP_STORE_URL),
+         "stores": "GOOGLE PLAY  +  APP STORE", "short": "Android and iOS from one Kotlin codebase, in Compose Multiplatform.",
          "desc": "A video player for Android and iOS from one Kotlin codebase, built with Compose Multiplatform. Media3 on Android "
                  "and AVPlayer on iOS sit behind a single Kotlin API. It runs on AdMob CMP and is built with Compose Kit."},
         {"name": "RingFit", "url": by_name["RingFit"]["url"], "meta": play("RingFit"), "short": "Ring sizing with a custom ruler built on Canvas.",
@@ -231,6 +239,17 @@ def app_items(data: dict) -> list[dict]:
          "desc": "Customizable QR codes drawn on Canvas: colors, eyes, patterns and gradients."},
         {"name": "CricScore", "url": by_name["CricScore"]["url"], "meta": play("CricScore"), "short": "Live cricket scores, series and scorecards.",
          "desc": "Live cricket scores, series and scorecards with MotionLayout animations and Paging 3."},
+    ]
+
+
+def ledger_rows(data: dict) -> list[dict]:
+    gh = data["github"]
+    return [
+        {"problem": "AI agents write Compose that compiles, then drifts", "name": "Compose Kit",
+         "proof": f"{gh['compose_skill_stars']} ★ · tested on 7 models"},
+        {"problem": "Compose Multiplatform ads meant hand-rolled glue", "name": "AdMob CMP", "proof": "Maven Central · Android + iOS"},
+        {"problem": "Agent skills ship with problems nobody sees", "name": "SkillLint", "proof": "runs in the browser"},
+        {"problem": "Analytics events were wired by hand", "name": "Eventics", "proof": "KSP code generation"},
     ]
 
 
@@ -256,12 +275,17 @@ def write_assets(data: dict) -> list[Path]:
     out = ASSETS / "svg"
     out.mkdir(parents=True, exist_ok=True)
     data = {**data, "profile": PROFILE, "experience": EXPERIENCE, "figures": figures(data)}
+    kit_data = {"kit": {"version": data["kit"]["version"], "stars": data["github"]["compose_skill_stars"]}}
+    apps = [{"name": a["name"], "meta": a["meta"], "desc": a["short"], "stores": a.get("stores", "GOOGLE PLAY")} for a in app_items(data)]
     written = []
     for theme, tokens in kit.THEMES.items():
         files = {
             "header": kit.build_header(data, tokens),
             "figures": kit.build_figures(data, tokens),
             "experience": kit.build_experience(data, tokens),
+            "kit": kit.build_kit(kit_data, tokens),
+            "ledger": kit.build_ledger(ledger_rows(data), tokens),
+            "shipped": kit.build_shipped(apps, tokens),
         }
         for name, svg in files.items():
             path = out / f"{name}-{theme}.svg"

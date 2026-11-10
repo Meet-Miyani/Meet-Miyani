@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="300" viewBox="0 0 960 300" fill="none" role="img" aria-label="Solutions, not fixes. AI agents write Compose that compiles, then drifts: Compose Kit (305 ★ · tested on 7 models). Compose Multiplatform ads meant hand-rolled glue: AdMob CMP (Maven Central · Android + iOS). Agent skills ship with problems nobody sees: SkillLint (runs in the browser). Analytics events were wired by hand: Eventics (KSP code generation)."><title>Solutions, not fixes. AI agents write Compose that compiles, then drifts: Compose Kit (305 ★ · tested on 7 models). Compose Multiplatform ads meant hand-rolled glue: AdMob CMP (Maven Central · Android + iOS). Agent skills ship with problems nobody sees: SkillLint (runs in the browser). Analytics events were wired by hand: Eventics (KSP code generation).</title><style>
+text { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif; }
+.num { font-variant-numeric: tabular-nums; }
+.mono { font-family: ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace; }
+.in { animation: in .7s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes in { from { opacity: 0; transform: translateY(6px); } }
+.draw { transform-box: fill-box; transform-origin: left; animation: draw 1.1s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes draw { from { transform: scaleX(0); } }
+.breathe { transform-box: fill-box; transform-origin: center; animation: breathe 3.2s ease-in-out infinite; opacity: 0; }
+@keyframes breathe { 0%, 100% { opacity: 0; transform: scale(1); } 50% { opacity: .35; transform: scale(2.4); } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+.pd0 { animation: pd 1.1s cubic-bezier(.2,.7,.2,1) 0.40s both; } .pd1 { animation: pd 1.1s cubic-bezier(.2,.7,.2,1) 0.68s both; } .pd2 { animation: pd 1.1s cubic-bezier(.2,.7,.2,1) 0.96s both; } .pd3 { animation: pd 1.1s cubic-bezier(.2,.7,.2,1) 1.24s both; } @keyframes pd { from { transform: translateX(-92px); opacity: 0; } 20% { opacity: 1; } }</style>
+<text class="mono" x="424" y="34" text-anchor="end" font-size="11" letter-spacing="1.2" fill="#818B98">A PROBLEM THAT KEPT COMING BACK</text><text class="mono" x="556" y="34" text-anchor="start" font-size="11" letter-spacing="1.2" fill="#818B98">WHAT I BUILT FOR IT</text>
+
+<text class="in" style="animation-delay:0.15s" x="424" y="83" text-anchor="end" font-size="15.5" fill="#59636E">AI agents write Compose that compiles, then drifts</text>
+<rect class="draw" style="animation-delay:0.40s" x="444" y="77.5" width="92" height="1" fill="#818B98"/>
+<circle class="pd0" cx="536" cy="78" r="3" fill="#1A7F37"/>
+<g class="in" style="animation-delay:0.85s">
+  <text x="556" y="84" font-size="20" font-weight="600" letter-spacing="-.3" fill="#1F2328">Compose Kit</text>
+  <text class="mono" x="960" y="83" text-anchor="end" font-size="12" fill="#59636E">305 ★ · tested on 7 models</text>
+</g>
+<rect x="0" y="106.5" width="960" height="1" fill="#D1D9E0" opacity="0.6"/>
+<text class="in" style="animation-delay:0.43s" x="424" y="141" text-anchor="end" font-size="15.5" fill="#59636E">Compose Multiplatform ads meant hand-rolled glue</text>
+<rect class="draw" style="animation-delay:0.68s" x="444" y="135.5" width="92" height="1" fill="#818B98"/>
+<circle class="pd1" cx="536" cy="136" r="3" fill="#1A7F37"/>
+<g class="in" style="animation-delay:1.13s">
+  <text x="556" y="142" font-size="20" font-weight="600" letter-spacing="-.3" fill="#1F2328">AdMob CMP</text>
+  <text class="mono" x="960" y="141" text-anchor="end" font-size="12" fill="#59636E">Maven Central · Android + iOS</text>
+</g>
+<rect x="0" y="164.5" width="960" height="1" fill="#D1D9E0" opacity="0.6"/>
+<text class="in" style="animation-delay:0.71s" x="424" y="199" text-anchor="end" font-size="15.5" fill="#59636E">Agent skills ship with problems nobody sees</text>
+<rect class="draw" style="animation-delay:0.96s" x="444" y="193.5" width="92" height="1" fill="#818B98"/>
+<circle class="pd2" cx="536" cy="194" r="3" fill="#1A7F37"/>
+<g class="in" style="animation-delay:1.41s">
+  <text x="556" y="200" font-size="20" font-weight="600" letter-spacing="-.3" fill="#1F2328">SkillLint</text>
+  <text class="mono" x="960" y="199" text-anchor="end" font-size="12" fill="#59636E">runs in the browser</text>
+</g>
+<rect x="0" y="222.5" width="960" height="1" fill="#D1D9E0" opacity="0.6"/>
+<text class="in" style="animation-delay:0.99s" x="424" y="257" text-anchor="end" font-size="15.5" fill="#59636E">Analytics events were wired by hand</text>
+<rect class="draw" style="animation-delay:1.24s" x="444" y="251.5" width="92" height="1" fill="#818B98"/>
+<circle class="pd3" cx="536" cy="252" r="3" fill="#1A7F37"/>
+<g class="in" style="animation-delay:1.69s">
+  <text x="556" y="258" font-size="20" font-weight="600" letter-spacing="-.3" fill="#1F2328">Eventics</text>
+  <text class="mono" x="960" y="257" text-anchor="end" font-size="12" fill="#59636E">KSP code generation</text>
+</g>
+<rect x="0" y="280.5" width="960" height="1" fill="#D1D9E0" opacity="0"/>
+</svg>

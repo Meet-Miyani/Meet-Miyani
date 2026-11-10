@@ -148,6 +148,7 @@ def build_experience(data: dict, t: dict) -> str:
 # ───────────────────────── signature graphics ─────────────────────────
 # Line-art pieces in the same language as the rest: hairlines, mono labels,
 # one accent. Loops are slow and small; resting state is always legible.
+# Each sits above a real-text list in the README that carries the links.
 
 def _label(x: float, y: float, text: str, t: dict, anchor: str = "start") -> str:
     return (
@@ -316,7 +317,7 @@ def build_shipped(apps: list[dict], t: dict) -> str:
         rest = "" if i == 0 else ' style="opacity:0"'
         scene_svg.append(f'<g class="sc{i}"{rest}>{scenes[app["name"]]}</g>')
         caption_svg.append(f"""<g class="sc{i}"{rest}>
-  <text class="mono" x="{tx}" y="120" font-size="12" letter-spacing="1.2" fill="{t['subtle']}">{i + 1:02d} / {n:02d}  ·  GOOGLE PLAY</text>
+  <text class="mono" x="{tx}" y="120" font-size="12" letter-spacing="1.2" fill="{t['subtle']}">{i + 1:02d} / {n:02d}  ·  {esc(app.get('stores', 'GOOGLE PLAY'))}</text>
   <text x="{tx - 2}" y="174" font-size="44" font-weight="600" letter-spacing="-1.2" fill="{t['fg']}">{esc(app['name'])}</text>
   <text x="{tx}" y="212" font-size="20" fill="{t['fg']}">{esc(app['meta'])}</text>
   <text x="{tx}" y="244" font-size="16" fill="{t['muted']}">{esc(app['desc'])}</text>

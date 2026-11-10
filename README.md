@@ -9,7 +9,7 @@
 
 I'm **Meet Miyani**, a senior Android and Compose Multiplatform developer based in Surat, India, working remotely. I build apps in **Kotlin** that ship to Android and iOS from one codebase, and I prefer solutions to fixes: when a problem keeps coming back, I build the tool that removes it and publish it.
 
-That habit produced [Compose Kit](https://github.com/Meet-Miyani/compose-skill), agent skills that measurably improve how AI coding agents write Compose, and [AdMob CMP](https://github.com/Meet-Miyani/admob-compose-multiplatform), a Compose Multiplatform AdMob SDK on Maven Central. Five years across consumer, logistics, food-tech and media. Currently at Haat Delivery, building Haat Partner+ in Compose Multiplatform.
+That habit produced [Compose Kit](https://github.com/Meet-Miyani/compose-skill), agent skills that measurably improve how AI coding agents write Compose, and [AdMob CMP](https://github.com/Meet-Miyani/admob-compose-multiplatform), a Compose Multiplatform AdMob SDK on Maven Central. Five years across consumer, logistics, food-tech and media. Currently at Haat Delivery, building a Compose Multiplatform app.
 
 [LinkedIn](https://www.linkedin.com/in/meet-miyani-34204121b/) · [Medium](https://meet-miyani.medium.com/) · [Google Play](https://play.google.com/store/apps/dev?id=7045442356661226869) · [Stack Overflow](https://stackoverflow.com/users/20559937/meet-miyani) · [Résumé](./assets/Meet_Miyani_Resume.pdf) · [miyanimeet02@gmail.com](mailto:miyanimeet02@gmail.com)
 
@@ -20,7 +20,19 @@ That habit produced [Compose Kit](https://github.com/Meet-Miyani/compose-skill),
   <img src="./assets/svg/figures-light.svg" alt="606K+ installs across my Google Play apps. About 90% fewer out-of-memory crashes after the Haat Driver-app rework. 305 stars on Compose Kit. 2 platforms from one codebase: ViewTube on Android and iOS." width="100%">
 </picture>
 
+## Compose Kit
+
+<a href="https://github.com/Meet-Miyani/compose-skill"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/svg/kit-dark.svg">
+  <img src="./assets/svg/kit-light.svg" alt="Compose Kit: seven agent skills that make AI coding agents write better Jetpack Compose and Compose Multiplatform code. 126 agentic runs, two blind graders per item, seven models. Rubric items passed without the kit and with v6.1: Gemini 3.8 Flash 56.4% to 87.2%, GPT-6-Luna 71.8% to 94.9%, DeepSeek V4.1 Flash 82.1% to 97.4%, DeepSeek V4 Pro 74.4% to 87.2%, GPT-6-Sol 76.9% to 87.2%, Sonnet 5.5 79.5% to 87.2%, Muse Spark 1.3 69.2% to 74.4%." width="100%">
+</picture></a>
+
 ## Solutions, not fixes
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/svg/ledger-dark.svg">
+  <img src="./assets/svg/ledger-light.svg" alt="A problem that kept coming back, and what I built for it. AI agents write Compose that compiles, then drifts: Compose Kit. Compose Multiplatform ads meant hand-rolled glue: AdMob CMP. Agent skills ship with problems nobody sees: SkillLint. Analytics events were wired by hand: Eventics." width="100%">
+</picture>
 
 <!-- dynamic-oss:start -->
 - **[Compose Kit](https://github.com/Meet-Miyani/compose-skill)** `305 ★` · [compose.avinya.dev](https://compose.avinya.dev)<br>Seven agent skills that make Claude Code, Codex, Cursor, Copilot and Gemini write better Jetpack Compose and Compose Multiplatform code. Tested across 126 agentic runs on seven models, with two blind graders per item.
@@ -31,8 +43,13 @@ That habit produced [Compose Kit](https://github.com/Meet-Miyani/compose-skill),
 
 ## Shipped apps
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/svg/shipped-dark.svg">
+  <img src="./assets/svg/shipped-light.svg" alt="Wireframes of the apps I built and shipped: ViewTube for Android and iOS, RingFit, QR Code Generator and CricScore." width="100%">
+</picture>
+
 <!-- dynamic-apps:start -->
-- **[ViewTube](https://play.google.com/store/apps/details?id=avinya.tech.yt)** `100K+ installs`<br>A video player for Android and iOS from one Kotlin codebase, built with Compose Multiplatform. Media3 on Android and AVPlayer on iOS sit behind a single Kotlin API. It runs on AdMob CMP and is built with Compose Kit.
+- **[ViewTube](https://play.google.com/store/apps/details?id=avinya.tech.yt)** `100K+ installs` · [App Store](https://apps.apple.com/us/app/viewtube-offline-video-player/id6814320903)<br>A video player for Android and iOS from one Kotlin codebase, built with Compose Multiplatform. Media3 on Android and AVPlayer on iOS sit behind a single Kotlin API. It runs on AdMob CMP and is built with Compose Kit.
 - **[RingFit](https://play.google.com/store/apps/details?id=avinya.tech.ringfit)** `500K+ installs`<br>A ring-size measurement app for Android with a custom ruler built on Canvas.
 - **[QR Code Generator](https://play.google.com/store/apps/details?id=avinya.tech.qrcode)** `1K+ installs`<br>Customizable QR codes drawn on Canvas: colors, eyes, patterns and gradients.
 - **[CricScore](https://play.google.com/store/apps/details?id=avinya.tech.cricscore)** `5K+ installs`<br>Live cricket scores, series and scorecards with MotionLayout animations and Paging 3.
@@ -42,7 +59,7 @@ That habit produced [Compose Kit](https://github.com/Meet-Miyani/compose-skill),
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/svg/experience-dark.svg">
-  <img src="./assets/svg/experience-light.svg" alt="Haat Delivery, Android Developer, remote (Israel), 2023 to now: shared library across 3 apps, about 90% fewer OOM crashes, now building Haat Partner+ in Compose Multiplatform. Freelance Android Developer, 2022 to 2023: BLE, IoT and medical-device integrations, media apps, 10+ client projects. Vasundhara Infotech, Android Developer, Surat, 2021 to 2022: R&D on Canvas, GLSL shaders and on-device ML." width="100%">
+  <img src="./assets/svg/experience-light.svg" alt="Haat Delivery, Android Developer, remote (Israel), 2023 to now: shared library across 3 apps, about 90% fewer OOM crashes, now building a Compose Multiplatform app. Freelance Android Developer, 2022 to 2023: BLE, IoT and medical-device integrations, media apps, 10+ client projects. Vasundhara Infotech, Android Developer, Surat, 2021 to 2022: R&D on Canvas, GLSL shaders and on-device ML." width="100%">
 </picture>
 
 ## Stack
