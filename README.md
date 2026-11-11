@@ -35,8 +35,8 @@ That habit produced [Compose Kit](https://github.com/Meet-Miyani/compose-skill),
 </picture>
 
 <!-- dynamic-oss:start -->
-- **[Compose Kit](https://github.com/Meet-Miyani/compose-skill)** `305 ★` · [compose.avinya.dev](https://compose.avinya.dev)<br>Seven agent skills that make Claude Code, Codex, Cursor, Copilot and Gemini write better Jetpack Compose and Compose Multiplatform code. Tested across 126 agentic runs on seven models, with two blind graders per item.
-- **[AdMob CMP](https://github.com/Meet-Miyani/admob-compose-multiplatform)** `35 ★` · [ads.avinya.dev](https://ads.avinya.dev)<br>A Compose Multiplatform AdMob SDK for Android and iOS. Banner, interstitial, rewarded, app-open and native ads from one `commonMain` API, with UMP consent built in. Published on Maven Central.
+- **[Compose Kit](https://github.com/Meet-Miyani/compose-skill)** `306 ★` · [compose.avinya.dev](https://compose.avinya.dev)<br>Seven agent skills that make Claude Code, Codex, Cursor, Copilot and Gemini write better Jetpack Compose and Compose Multiplatform code. Tested across 126 agentic runs on seven models, with two blind graders per item.
+- **[AdMob CMP](https://github.com/Meet-Miyani/admob-compose-multiplatform)** `36 ★` · [ads.avinya.dev](https://ads.avinya.dev)<br>A Compose Multiplatform AdMob SDK for Android and iOS. Banner, interstitial, rewarded, app-open and native ads from one `commonMain` API, with UMP consent built in. Published on Maven Central.
 - **[SkillLint](https://github.com/Meet-Miyani/agent-skill-validator)**<br>A validator for AI agent skills that runs entirely in the browser: structure, links, token budget and security checks.
 - **[Eventics](https://github.com/Meet-Miyani/Eventics)**<br>An Android event-logging library. KSP turns typed event classes into generated analytics payload code.
 <!-- dynamic-oss:end -->
@@ -80,5 +80,5 @@ That habit produced [Compose Kit](https://github.com/Meet-Miyani/compose-skill),
 <br>
 
 <!-- dynamic-updated:start -->
-<sub>Numbers refresh daily · last run Nov 10, 2026</sub>
+<sub>Numbers refresh daily · last run Nov 11, 2026</sub>
 <!-- dynamic-updated:end -->
